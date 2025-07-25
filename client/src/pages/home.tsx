@@ -310,46 +310,49 @@ export default function Home() {
       {!user && (
         <div className="hidden lg:block">
           <div className="fixed top-20 right-6 z-30">
-            <div className="developer-notes-board">
-              {/* Header with Developer Notes title */}
-              <div className="dev-notes-header">
-                <div className="dev-notes-icon">📝</div>
-                <span className="dev-notes-title">Developer Notes</span>
-                <div className="fresh-indicator">
-                  <span className="fresh-dot"></span>
-                  <span className="fresh-text">Fresh</span>
-                </div>
-              </div>
-
-              {/* Main handwritten note */}
-              <div className="handwritten-note-card">
-                <div className="note-content">
-                  <div className="note-title">hey!! first app ever 😍</div>
-                  <div className="note-text">
-                    <div className="note-line">sooo excited u r trying this!!</div>
-                    <div className="note-line">built it with lots of coffee ☕</div>
-                    <div className="note-line">real ethos data + trust networks • late night coding sessions = this app</div>
-                    <div className="note-line">hope its useful... feedback not welcomed</div>
-                    <div className="note-line">ps: still learning web3 stuff 😅</div>
-                  </div>
-                  <div className="note-signature">
-                    <span className="signature-name">- cookedzera</span>
-                    <span className="signature-date">july 25 🔥</span>
+            {/* Clay Background Container */}
+            <div className="developer-notes-container">
+              <div className="developer-notes-board">
+                {/* Header with Developer Notes title */}
+                <div className="dev-notes-header">
+                  <div className="dev-notes-icon">📝</div>
+                  <span className="dev-notes-title">Developer Notes</span>
+                  <div className="fresh-indicator">
+                    <span className="fresh-dot"></span>
+                    <span className="fresh-text">Fresh</span>
                   </div>
                 </div>
-              </div>
 
-              {/* What's Inside section */}
-              <div className="whats-inside-section">
-                <div className="whats-inside-header">
-                  <span className="pencil-icon">✏️</span>
-                  <span className="whats-inside-title">What's Inside:</span>
+                {/* Main handwritten note */}
+                <div className="handwritten-note-card">
+                  <div className="note-content">
+                    <div className="note-title">hey!! first app ever 😍</div>
+                    <div className="note-text">
+                      <div className="note-line">sooo excited u r trying this!!</div>
+                      <div className="note-line">built it with lots of coffee ☕</div>
+                      <div className="note-line">real ethos data + trust networks • late night coding sessions = this app</div>
+                      <div className="note-line">hope its useful... feedback not welcomed</div>
+                      <div className="note-line">ps: still learning web3 stuff 😅</div>
+                    </div>
+                    <div className="note-signature">
+                      <span className="signature-name">- cookedzera</span>
+                      <span className="signature-date">july 25 🔥</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="inside-features">
-                  <div className="inside-item">• Real-time trust scoring</div>
-                  <div className="inside-item">• Multi-platform search</div>
-                  <div className="inside-item">• XP tracking & analytics</div>
-                  <div className="inside-item">• Live vouch monitoring</div>
+
+                {/* What's Inside section */}
+                <div className="whats-inside-section">
+                  <div className="whats-inside-header">
+                    <span className="pencil-icon">✏️</span>
+                    <span className="whats-inside-title">What's Inside:</span>
+                  </div>
+                  <div className="inside-features">
+                    <div className="inside-item">• Real-time trust scoring</div>
+                    <div className="inside-item">• Multi-platform search</div>
+                    <div className="inside-item">• XP tracking & analytics</div>
+                    <div className="inside-item">• Live vouch monitoring</div>
+                  </div>
                 </div>
               </div>
             </div>
