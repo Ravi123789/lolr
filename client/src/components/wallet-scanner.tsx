@@ -213,14 +213,14 @@ export function WalletScanner() {
   // Full search interface with responsive design - Enhanced for desktop, original for mobile
   return (
     <>
-      <section className="py-4 md:py-8 animate-fade-in">
-        <div className="clay-card desktop-trust-scanner-card p-3 md:p-6 lg:p-8 mb-3 md:mb-6 relative overflow-hidden mx-auto w-full max-w-[1600px]">
+      <section className="py-4 md:py-6 animate-fade-in">
+        <div className="clay-card desktop-trust-scanner-card p-3 md:p-4 lg:p-6 mb-3 md:mb-4 relative overflow-hidden mx-auto w-full max-w-none">
           {/* Subtle background elements */}
           <div className="absolute top-3 right-4 w-6 h-6 md:top-8 md:right-12 md:w-12 md:h-12 bg-gradient-to-br from-violet-500/10 to-purple-500/5 rounded-full blur-sm md:blur-md"></div>
           <div className="absolute bottom-3 left-5 w-4 h-4 md:bottom-8 md:left-10 md:w-8 md:h-8 bg-gradient-to-br from-amber-500/8 to-yellow-500/5 rounded-full blur-sm md:blur-md"></div>
           
           {/* Responsive header - simple on mobile, handwritten comic style on desktop */}
-          <div className="md:text-center mb-2 md:mb-8 relative z-10">
+          <div className="md:text-center mb-2 md:mb-4 relative z-10">
             {/* Mobile header */}
             <div className="flex items-center justify-between mb-2 md:hidden">
               <div className="flex items-center space-x-1.5">
@@ -330,7 +330,7 @@ export function WalletScanner() {
             
           {/* Modern Platform Support Indicators - redesigned with smooth animations */}
           {!showSuggestions && (
-            <div className="flex items-center justify-center gap-2 md:gap-4 lg:gap-6 relative z-[1] mt-3 md:mt-6 lg:mt-8">
+            <div className="flex items-center justify-center gap-2 md:gap-3 lg:gap-4 relative z-[1] mt-3 md:mt-4 lg:mt-5">
               <div className="modern-platform-indicator ethereum-indicator group" title="Ethereum Addresses & ENS">
                 <div className="platform-glow ethereum-glow"></div>
                 <div className="platform-content">
