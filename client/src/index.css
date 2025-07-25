@@ -3175,6 +3175,51 @@ input, textarea, [contenteditable="true"] {
     flex: 1;
   }
 
+  .sketchy-title {
+    font-family: 'Permanent Marker', 'Kalam', cursive;
+    font-size: 16px;
+    font-weight: 800;
+    color: #ff6500;
+    text-shadow: 
+      1px 1px 0px rgba(0, 0, 0, 0.8),
+      2px 2px 0px rgba(0, 0, 0, 0.6),
+      3px 3px 0px rgba(0, 0, 0, 0.4);
+    transform: rotate(-2deg) skew(-1deg, 1deg);
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+    text-decoration-color: #ff6500;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    filter: drop-shadow(0 0 2px rgba(255, 101, 0, 0.3));
+    animation: sketchyWiggle 4s ease-in-out infinite;
+  }
+
+  html.dark .sketchy-title {
+    color: #ff7f50;
+    text-shadow: 
+      1px 1px 0px rgba(0, 0, 0, 0.9),
+      2px 2px 0px rgba(0, 0, 0, 0.7),
+      3px 3px 0px rgba(0, 0, 0, 0.5);
+    text-decoration-color: #ff7f50;
+    filter: drop-shadow(0 0 3px rgba(255, 127, 80, 0.4));
+  }
+
+  @keyframes sketchyWiggle {
+    0%, 100% { 
+      transform: rotate(-2deg) skew(-1deg, 1deg) translateX(0px); 
+    }
+    25% { 
+      transform: rotate(-1.5deg) skew(-0.5deg, 0.5deg) translateX(0.5px); 
+    }
+    50% { 
+      transform: rotate(-2.5deg) skew(-1.5deg, 1.5deg) translateX(-0.5px); 
+    }
+    75% { 
+      transform: rotate(-1.8deg) skew(-0.8deg, 0.8deg) translateX(0.3px); 
+    }
+  }
+
   .fresh-indicator {
     display: flex;
     align-items: center;

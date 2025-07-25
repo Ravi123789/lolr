@@ -315,8 +315,8 @@ export default function Home() {
               <div className="developer-notes-board">
                 {/* Header with Developer Notes title */}
                 <div className="dev-notes-header">
-                  <div className="dev-notes-icon">📝</div>
-                  <span className="dev-notes-title">Developer Notes</span>
+                  <div className="dev-notes-icon">✏️</div>
+                  <span className="dev-notes-title sketchy-title">#Notes</span>
                   <div className="fresh-indicator">
                     <span className="fresh-dot"></span>
                     <span className="fresh-text">Fresh</span>
