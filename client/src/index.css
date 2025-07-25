@@ -3410,12 +3410,12 @@ input, textarea, [contenteditable="true"] {
     }
   }
 
-  /* Desktop Expansion for Scanner Section */
+  /* Desktop Expansion for Scanner Section - Only for Desktop Users */
   @media (min-width: 1024px) {
     .desktop-optimized-scanner {
       max-width: none;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 1rem;
     }
 
     .desktop-optimized-scanner .clay-card {
@@ -3425,9 +3425,11 @@ input, textarea, [contenteditable="true"] {
     }
 
     .desktop-trust-scanner-card {
-      max-width: 95vw;
-      width: 100%;
-      padding: 1.25rem;
+      max-width: 95% !important;
+      width: 95% !important;
+      padding: 1.25rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
   }
 
@@ -3438,19 +3440,24 @@ input, textarea, [contenteditable="true"] {
     }
 
     .desktop-trust-scanner-card {
-      max-width: 92vw;
-      width: 100%;
-      padding: 1.5rem;
-      border-radius: 1.25rem;
+      max-width: 90% !important;
+      width: 90% !important;
+      padding: 1.5rem !important;
+      border-radius: 1.25rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
   }
 
   @media (min-width: 1536px) {
     .desktop-trust-scanner-card {
-      max-width: 90vw;
-      width: 100%;
-      padding: 2rem;
+      max-width: 85% !important;
+      width: 85% !important;
+      padding: 2rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
+  }
 
     .desktop-platform-badge {
       padding: 0.75rem 1.25rem;
@@ -3472,7 +3479,6 @@ input, textarea, [contenteditable="true"] {
       font-size: 0.875rem;
       font-weight: 600;
     }
-  }
 
     .desktop-action-grid .glassmorphism-button {
       padding: 2rem 1.5rem;
