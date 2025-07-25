@@ -196,9 +196,7 @@ export default function Home() {
       {/* Ethos Stats Dashboard - Desktop Only, No User Selected */}
       {!user && <EthosStatsData />}
       
-      <div className="desktop-optimized-scanner">
-        <WalletScanner />
-      </div>
+      <WalletScanner />
       
       {user ? (
         <>
