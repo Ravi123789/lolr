@@ -214,7 +214,7 @@ export function WalletScanner() {
   return (
     <>
       <section className="py-2 md:py-3 animate-fade-in">
-        <div className="clay-card p-2 md:p-3 lg:p-3 mb-2 md:mb-3 relative overflow-hidden w-full lg:max-w-7xl xl:max-w-[100rem] 2xl:max-w-[110rem] mx-auto">
+        <div className="clay-card p-2 md:p-3 lg:p-3 mb-2 md:mb-3 relative overflow-hidden w-full max-w-lg md:max-w-md lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
           {/* Subtle background elements */}
           <div className="absolute top-3 right-4 w-6 h-6 md:top-8 md:right-12 md:w-12 md:h-12 bg-gradient-to-br from-violet-500/10 to-purple-500/5 rounded-full blur-sm md:blur-md"></div>
           <div className="absolute bottom-3 left-5 w-4 h-4 md:bottom-8 md:left-10 md:w-8 md:h-8 bg-gradient-to-br from-amber-500/8 to-yellow-500/5 rounded-full blur-sm md:blur-md"></div>
