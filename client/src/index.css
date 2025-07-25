@@ -3288,40 +3288,63 @@ input, textarea, [contenteditable="true"] {
   /* Glassmorphism Button Styling */
   .glassmorphism-button {
     background: linear-gradient(145deg, 
-      rgba(255, 255, 255, 0.08), 
-      rgba(255, 255, 255, 0.03));
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    transition: all 0.3s ease;
+      rgba(255, 255, 255, 0.12), 
+      rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-      0 8px 32px -12px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 8px 32px -12px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glassmorphism-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, 
+      rgba(255, 255, 255, 0.05), 
+      rgba(255, 255, 255, 0.01));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
   }
 
   .glassmorphism-button:hover {
-    transform: translateY(-2px) scale(1.02);
-    border-color: rgba(255, 101, 0, 0.3);
+    transform: translateY(-3px) scale(1.03);
+    border-color: rgba(255, 101, 0, 0.4);
     box-shadow: 
-      0 12px 40px -12px rgba(255, 101, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      0 16px 48px -12px rgba(255, 101, 0, 0.25),
+      0 8px 32px -8px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .glassmorphism-button:hover::before {
+    opacity: 1;
   }
 
   html.dark .glassmorphism-button {
     background: linear-gradient(145deg, 
-      rgba(255, 255, 255, 0.06), 
-      rgba(255, 255, 255, 0.02));
-    border: 1px solid rgba(255, 255, 255, 0.08);
+      rgba(255, 255, 255, 0.08), 
+      rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 
       0 8px 32px -12px rgba(0, 0, 0, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   html.dark .glassmorphism-button:hover {
-    border-color: rgba(255, 101, 0, 0.25);
+    border-color: rgba(255, 101, 0, 0.35);
     box-shadow: 
-      0 12px 40px -12px rgba(255, 101, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      0 16px 48px -12px rgba(255, 101, 0, 0.3),
+      0 8px 32px -8px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
 
   /* Modern Scanning Line Animation */
