@@ -196,7 +196,9 @@ export default function Home() {
       {/* Ethos Stats Dashboard - Desktop Only, No User Selected */}
       {!user && <EthosStatsData />}
       
-      <WalletScanner />
+      <div className="desktop-optimized-scanner">
+        <WalletScanner />
+      </div>
       
       {user ? (
         <>
@@ -282,15 +284,15 @@ export default function Home() {
           <FlexScoreShare />
         </>
       ) : (
-        <section className="text-center py-5 clay-card mobile-card p-4 relative overflow-hidden trust-scanner-section">
+        <section className="text-center py-6 clay-card desktop-scanner-card p-6 relative overflow-hidden trust-scanner-section">
           <div className="absolute top-2 right-2 w-10 h-10 bg-gradient-to-br from-orange-500/20 to-primary/20 rounded-full blur-md floating-orb-1"></div>
           <div className="absolute bottom-3 left-3 w-8 h-8 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-sm floating-orb-2"></div>
           <div className="absolute top-1/2 left-1 w-6 h-6 bg-gradient-to-br from-green-500/15 to-cyan-500/15 rounded-full blur-sm floating-orb-3"></div>
           
-          <h2 className="text-xl font-bold mb-3 text-gray-800 dark:text-foreground relative tracking-tight heading">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-foreground relative tracking-tight heading">
             Trust Intelligence Scanner
           </h2>
-          <p className="text-gray-600 dark:text-muted-foreground text-sm mb-4 relative leading-relaxed max-w-xs mx-auto">
+          <p className="text-gray-600 dark:text-muted-foreground text-base mb-6 relative leading-relaxed max-w-md mx-auto">
             Analyze reputation across multiple platforms with{' '}
             <span 
               className="font-medium"
@@ -299,7 +301,7 @@ export default function Home() {
               modern insights
             </span>
           </p>
-          <div className="flex justify-center relative overflow-hidden w-16 h-1 mx-auto rounded-full">
+          <div className="flex justify-center relative overflow-hidden w-20 h-1.5 mx-auto rounded-full">
             <div className="absolute w-full h-full bg-gradient-to-r from-blue-500 via-orange-500 to-purple-500 rounded-full" 
                  style={{ animation: 'modernScanningLine 4s linear infinite' }} />
           </div>
@@ -364,7 +366,7 @@ export default function Home() {
       <section className="animate-slide-up mt-4" style={{ animationDelay: '0.7s' }}>
         {!user && (
           // No user selected - show basic home actions
-          <div className="grid grid-cols-2 gap-3 mobile-card">
+          <div className="grid grid-cols-2 gap-4 desktop-action-grid">
             <div 
               className="glassmorphism-button p-3 group cursor-pointer"
               onClick={() => window.open('https://whitepaper.ethos.network', '_blank')}
