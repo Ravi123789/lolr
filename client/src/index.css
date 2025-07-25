@@ -3197,14 +3197,16 @@ input, textarea, [contenteditable="true"] {
 
   .handwritten-note-card {
     background: linear-gradient(145deg, 
-      hsl(25, 80%, 45%), 
-      hsl(25, 75%, 40%));
+      rgba(255, 165, 0, 0.15), 
+      rgba(255, 140, 0, 0.12));
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 165, 0, 0.25);
     border-radius: 12px;
     padding: 16px;
     margin-bottom: 12px;
     box-shadow: 
-      0 8px 24px -6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 2px rgba(255, 255, 255, 0.2);
+      0 8px 32px -12px rgba(255, 140, 0, 0.2),
+      inset 0 1px 2px rgba(255, 255, 255, 0.15);
     transform: rotate(-1deg);
     position: relative;
     overflow: hidden;
@@ -3212,8 +3214,10 @@ input, textarea, [contenteditable="true"] {
 
   html.dark .handwritten-note-card {
     background: linear-gradient(145deg, 
-      hsl(25, 70%, 35%), 
-      hsl(25, 65%, 30%));
+      rgba(255, 165, 0, 0.12), 
+      rgba(255, 140, 0, 0.08));
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 165, 0, 0.2);
   }
 
   .handwritten-note-card::before {
@@ -3229,7 +3233,8 @@ input, textarea, [contenteditable="true"] {
   }
 
   .note-content {
-    color: white;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .note-title {
@@ -3237,6 +3242,7 @@ input, textarea, [contenteditable="true"] {
     font-weight: 700;
     margin-bottom: 12px;
     color: #fbbf24;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     transform: rotate(-0.5deg);
   }
 
@@ -3269,10 +3275,12 @@ input, textarea, [contenteditable="true"] {
   .signature-name {
     font-weight: 600;
     color: #fbbf24;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   }
 
   .signature-date {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .whats-inside-section {
