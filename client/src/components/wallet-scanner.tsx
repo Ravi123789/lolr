@@ -213,8 +213,8 @@ export function WalletScanner() {
   // Full search interface with responsive design - Enhanced for desktop, original for mobile
   return (
     <>
-      <section className="py-4 md:py-6 animate-fade-in lg:px-0">
-        <div className="clay-card p-3 md:p-4 lg:p-6 mb-3 md:mb-4 relative overflow-hidden w-full lg:w-[600px] xl:w-[700px] 2xl:w-[750px] mx-auto">
+      <section className="py-4 md:py-6 animate-fade-in px-4 lg:px-0">
+        <div className="clay-card p-3 md:p-4 lg:p-6 mb-3 md:mb-4 relative overflow-hidden w-full lg:w-[600px] xl:w-[600px] 2xl:w-[650px] xl:ml-[150px] mx-auto">
           {/* Subtle background elements */}
           <div className="absolute top-3 right-4 w-6 h-6 md:top-8 md:right-12 md:w-12 md:h-12 bg-gradient-to-br from-violet-500/10 to-purple-500/5 rounded-full blur-sm md:blur-md"></div>
           <div className="absolute bottom-3 left-5 w-4 h-4 md:bottom-8 md:left-10 md:w-8 md:h-8 bg-gradient-to-br from-amber-500/8 to-yellow-500/5 rounded-full blur-sm md:blur-md"></div>
