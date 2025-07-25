@@ -3412,50 +3412,32 @@ input, textarea, [contenteditable="true"] {
 
   /* Desktop Expansion for Scanner Section - Only for Desktop Users */
   @media (min-width: 1024px) {
-    .desktop-optimized-scanner {
-      max-width: none;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .desktop-optimized-scanner .clay-card {
-      max-width: none;
-      margin: 0 auto;
-      padding: 1.5rem;
-    }
-
     .desktop-trust-scanner-card {
-      max-width: 75% !important;
-      width: 75% !important;
-      padding: 1.25rem !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: calc(100% - 2rem) !important;
+      max-width: none !important;
     }
   }
 
   @media (min-width: 1280px) {
-    .desktop-optimized-scanner .clay-card {
-      max-width: none;
-      padding: 1.75rem;
-    }
-
     .desktop-trust-scanner-card {
-      max-width: 70% !important;
-      width: 70% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: calc(100% - 4rem) !important;
+      max-width: none !important;
       padding: 1.5rem !important;
       border-radius: 1.25rem !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
     }
   }
 
   @media (min-width: 1536px) {
     .desktop-trust-scanner-card {
-      max-width: 65% !important;
-      width: 65% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: calc(100% - 6rem) !important;
+      max-width: none !important;
       padding: 2rem !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
     }
   }
 
