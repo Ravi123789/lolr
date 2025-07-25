@@ -3186,13 +3186,36 @@ input, textarea, [contenteditable="true"] {
       3px 3px 0px rgba(0, 0, 0, 0.4);
     transform: rotate(-2deg) skew(-1deg, 1deg);
     letter-spacing: 0.5px;
-    text-decoration: underline;
-    text-decoration-color: #ff6500;
-    text-decoration-style: wavy;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 3px;
+    text-decoration: none;
     filter: drop-shadow(0 0 2px rgba(255, 101, 0, 0.3));
     animation: sketchyWiggle 4s ease-in-out infinite;
+    position: relative;
+  }
+
+  .sketchy-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #ff6500;
+    transform: rotate(0.5deg);
+    border-radius: 1px;
+    box-shadow: 
+      1px 0 0 rgba(255, 101, 0, 0.8),
+      -1px 0 0 rgba(255, 101, 0, 0.6),
+      2px 1px 0 rgba(255, 101, 0, 0.4);
+    clip-path: polygon(
+      0% 40%, 
+      10% 60%, 
+      25% 30%, 
+      40% 70%, 
+      55% 20%, 
+      70% 80%, 
+      85% 35%, 
+      100% 65%
+    );
   }
 
   html.dark .sketchy-title {
@@ -3201,8 +3224,15 @@ input, textarea, [contenteditable="true"] {
       1px 1px 0px rgba(0, 0, 0, 0.9),
       2px 2px 0px rgba(0, 0, 0, 0.7),
       3px 3px 0px rgba(0, 0, 0, 0.5);
-    text-decoration-color: #ff7f50;
     filter: drop-shadow(0 0 3px rgba(255, 127, 80, 0.4));
+  }
+
+  html.dark .sketchy-title::after {
+    background: #ff7f50;
+    box-shadow: 
+      1px 0 0 rgba(255, 127, 80, 0.8),
+      -1px 0 0 rgba(255, 127, 80, 0.6),
+      2px 1px 0 rgba(255, 127, 80, 0.4);
   }
 
   @keyframes sketchyWiggle {
