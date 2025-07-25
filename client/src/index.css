@@ -3317,11 +3317,11 @@ input, textarea, [contenteditable="true"] {
   }
 
   .glassmorphism-button:hover {
-    transform: translateY(-3px) scale(1.03);
+    transform: translateY(-1px) scale(1.02);
     border-color: rgba(255, 101, 0, 0.4);
     box-shadow: 
-      0 16px 48px -12px rgba(255, 101, 0, 0.25),
-      0 8px 32px -8px rgba(0, 0, 0, 0.15),
+      0 8px 24px -8px rgba(255, 101, 0, 0.25),
+      0 4px 16px -4px rgba(0, 0, 0, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 0.25);
   }
 

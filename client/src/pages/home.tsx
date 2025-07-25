@@ -361,7 +361,7 @@ export default function Home() {
       )}
       
       {/* Quick Actions - Mobile optimized */}
-      <section className="animate-slide-up" style={{ animationDelay: '0.7s' }}>
+      <section className="animate-slide-up mt-4" style={{ animationDelay: '0.7s' }}>
         {!user && (
           // No user selected - show basic home actions
           <div className="grid grid-cols-2 gap-3 mobile-card">
