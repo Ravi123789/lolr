@@ -282,7 +282,7 @@ export default function Home() {
           <FlexScoreShare />
         </>
       ) : (
-        <section className="text-center py-5 clay-card mobile-card p-4 relative overflow-hidden">
+        <section className="text-center py-5 clay-card mobile-card p-4 relative overflow-hidden trust-scanner-section">
           <div className="absolute top-2 right-2 w-10 h-10 bg-gradient-to-br from-orange-500/20 to-primary/20 rounded-full blur-md floating-orb-1"></div>
           <div className="absolute bottom-3 left-3 w-8 h-8 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-sm floating-orb-2"></div>
           <div className="absolute top-1/2 left-1 w-6 h-6 bg-gradient-to-br from-green-500/15 to-cyan-500/15 rounded-full blur-sm floating-orb-3"></div>
@@ -306,95 +306,63 @@ export default function Home() {
         </section>
       )}
 
-      {/* Modern Messy Handwritten Note - Desktop Only */}
+      {/* Compact Feature Highlights - Desktop Only */}
       {!user && (
         <div className="hidden lg:block">
-          <div className="fixed top-16 right-6 z-30">
-            <div id="messy-note" className="messy-note-container excited dark">
-              {/* Paper background with torn edges */}
-              <div className="messy-paper">
-                {/* Ink stains and coffee rings */}
-                <div className="ink-stain stain-1"></div>
-                <div className="ink-stain stain-2"></div>
-                <div className="ink-stain stain-3"></div>
-                <div className="coffee-ring"></div>
-                <div className="washi-tape"></div>
-                
-                {/* Handwritten content */}
-                <div className="handwritten-content">
-                  {/* Main title - scribbled style */}
-                  <div className="messy-title" id="messy-title" dangerouslySetInnerHTML={{ __html: "trust radar ⚡" }}></div>
-                  
-                  {/* Messy bullet points */}
-                  <div className="messy-bullets">
-                    <div className="bullet-line dark-ink">✓ scans wallets instantly</div>
-                    <div className="bullet-line light-ink crossed-out">✕ broke it 5 times ✕</div>
-                    <div className="bullet-line dark-ink">✓ ethos protocol magic</div>
-                    <div className="bullet-line light-ink scratched-text">✕ old ui design ✕</div>
-                    <div className="bullet-line dark-ink underlined">trust scores are wild!</div>
-                    <div className="bullet-line light-ink small coffee-priority">☕ coffee break as priority</div>
-                    <div className="bullet-line teaser-highlight" id="feature-note">🔥 NEXT: RepuTrace™</div>
-                  </div>
-                  
-                  {/* Random thought bubble */}
-                  <div className="thought-bubble">
-                    <div className="thought-text" id="messy-thought">built this at 2am with red bull...</div>
-                    <div className="bubble-tail"></div>
-                  </div>
-                  
-                  {/* Developer info box */}
-                  <div className="dev-info-box">
-                    <div className="dev-line dev-name-proper">@cookedzera</div>
-                    <div className="dev-line" id="dev-date">july 25, 2025 ✨</div>
-                    <div className="dev-line small">replit + farcaster</div>
-                    <div className="dev-line teaser small">+ 2 secret features 👀</div>
-                  </div>
-                  
-                  {/* Doodles */}
-                  <div className="doodle-corner">
-                    <svg className="doodle-arrow" viewBox="0 0 30 20">
-                      <path d="M2,10 Q15,2 28,10" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                      <path d="M23,6 L28,10 L23,14" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                    </svg>
-                    <span className="doodle-text">try it!</span>
-                  </div>
-                  
-                  {/* Random doodles */}
-                  <div className="random-doodles">
-                    <svg className="doodle-star" viewBox="0 0 16 16">
-                      <path d="M8,2 L9,6 L13,6 L10,9 L11,13 L8,11 L5,13 L6,9 L3,6 L7,6 Z" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                    </svg>
-                    <svg className="doodle-heart" viewBox="0 0 20 18">
-                      <path d="M10,16 C10,16 2,9 2,5 C2,2 4,1 6,2 C8,3 10,5 10,5 C10,5 12,3 14,2 C16,1 18,2 18,5 C18,9 10,16 10,16 Z" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                    </svg>
-                    <div className="doodle-squiggle">~~~~~</div>
-                    
-                    {/* Hand-drawn coffee mug */}
-                    <svg className="doodle-coffee" viewBox="0 0 24 20">
-                      <path d="M4,8 L4,16 Q4,18 6,18 L14,18 Q16,18 16,16 L16,8 Z" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                      <path d="M16,10 L18,10 Q20,10 20,12 L20,14 Q20,16 18,16 L16,16" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                      <path d="M4,8 L16,8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                      <text x="10" y="13" textAnchor="middle" fontSize="5" fontFamily="Gloria Hallelujah, cursive" fill="currentColor">ethos</text>
-                      <path d="M7,5 Q8,3 9,5" stroke="currentColor" strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.6"/>
-                      <path d="M11,4 Q12,2 13,4" stroke="currentColor" strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.6"/>
-                    </svg>
-                  </div>
-                  
-                  {/* Messy signature */}
-                  <div className="messy-signature">
-                    <div className="signature-line"></div>
-                    <div className="signature-name">~@cookedzera</div>
-                    <div className="date-scribble">jul '25 ✨</div>
-                  </div>
-                  
-                  {/* Last updated note */}
-                  <div className="last-updated-note">
-                    <span className="update-text">last updated 24 july</span>
-                  </div>
+          <div className="fixed top-20 right-6 z-30 space-y-4">
+            {/* Compact Sticky Note */}
+            <div className="compact-sticky-note">
+              <div className="sticky-header">
+                <span className="sticky-title">🚀 Trust Radar</span>
+                <div className="sticky-pulse"></div>
+              </div>
+              <div className="sticky-content">
+                <div className="feature-tag active">✓ Live scanning</div>
+                <div className="feature-tag">✓ Network analysis</div>
+              </div>
+            </div>
+
+            {/* New Features Highlight */}
+            <div className="feature-highlight-card new-features">
+              <div className="feature-header">
+                <span className="feature-badge new">NEW</span>
+                <span className="feature-title">Latest Features</span>
+              </div>
+              <div className="feature-list">
+                <div className="feature-item">
+                  <span className="feature-icon">⚡</span>
+                  <span className="feature-text">Instant trust scores</span>
                 </div>
-                
-                {/* Paper clip */}
-                <div className="paper-clip"></div>
+                <div className="feature-item">
+                  <span className="feature-icon">🔗</span>
+                  <span className="feature-text">Network visualization</span>
+                </div>
+                <div className="feature-item">
+                  <span className="feature-icon">📊</span>
+                  <span className="feature-text">R4R analytics</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Upcoming Features */}
+            <div className="feature-highlight-card upcoming-features">
+              <div className="feature-header">
+                <span className="feature-badge upcoming">SOON</span>
+                <span className="feature-title">Coming Next</span>
+              </div>
+              <div className="feature-list">
+                <div className="feature-item">
+                  <span className="feature-icon">🤖</span>
+                  <span className="feature-text">AI risk scoring</span>
+                </div>
+                <div className="feature-item">
+                  <span className="feature-icon">📱</span>
+                  <span className="feature-text">Mobile push alerts</span>
+                </div>
+                <div className="feature-item">
+                  <span className="feature-icon">💎</span>
+                  <span className="feature-text">Premium insights</span>
+                </div>
               </div>
             </div>
           </div>

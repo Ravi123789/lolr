@@ -65,58 +65,37 @@ export function EthosStatsData() {
   ];
 
   return (
-    <div className="hidden lg:block fixed left-6 top-1/2 transform -translate-y-1/2 w-80 z-10">
-      {/* Modern Aesthetic Dashboard */}
-      <div className="modern-ethos-panel">
-        {/* Header with Brand */}
-        <div className="panel-header">
+    <div className="hidden xl:block fixed left-6 top-1/2 transform -translate-y-1/2 w-72 z-10">
+      {/* Ultra Modern Stats Dashboard */}
+      <div className="ultra-modern-stats-panel">
+        {/* Sleek Header */}
+        <div className="stats-header">
           <div className="header-content">
             <div className="brand-section">
-              <div className="rotating-logo">
+              <div className="modern-logo-wrapper">
                 <SimpleRadarLogo className="w-8 h-8" />
               </div>
-              <div className="brand-info">
-                <h3 className="brand-name">Ethos Protocol</h3>
-                <div className="live-indicator">
-                  <div className="live-dot"></div>
-                  <span className="live-text">Live Network</span>
-                </div>
-              </div>
+              <div className="stats-title">Ethos Protocol</div>
+              <div className="stats-subtitle">Live Network</div>
             </div>
           </div>
-          <div className="header-accent"></div>
         </div>
 
-        {/* Stats Section */}
-        <div className="stats-container">
-          <div className="stats-title">REAL-TIME DATA</div>
-          <div className="stats-grid">
-            {statsData.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="modern-stat-card"
-                style={{ animationDelay: `${stat.delay}ms` }}
-              >
-                <div className="stat-card-inner">
-                  <div className={`stat-icon-container bg-gradient-to-br ${stat.color}`}>
-                    <stat.icon className="stat-icon" />
-                  </div>
-                  <div className="stat-details">
-                    <div className="stat-label">{stat.label}</div>
-                    <div className="stat-number">{stat.value}</div>
-                  </div>
-                  <div className={`stat-glow-effect bg-gradient-to-r ${stat.color}`}></div>
-                </div>
+        {/* Modern Stats Grid */}
+        <div className="stats-grid">
+          {statsData.map((stat, index) => (
+            <div
+              key={stat.label}
+              className="stat-item"
+              style={{ animationDelay: `${stat.delay}ms` }}
+            >
+              <div className={`stat-icon-wrapper bg-gradient-to-br ${stat.color}`}>
+                <stat.icon className="w-4 h-4 text-white" />
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Floating orbs for aesthetic */}
-        <div className="floating-orbs">
-          <div className="orb orb-1"></div>
-          <div className="orb orb-2"></div>
-          <div className="orb orb-3"></div>
+              <div className="stat-value">{stat.value}</div>
+              <div className="stat-label">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
