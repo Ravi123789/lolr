@@ -1,0 +1,36 @@
+{
+  "accountAssociation": {
+    "header": "ethosradar-app-association",
+    "payload": "ethosradar.app",
+    "signature": "ethosradar-signature"
+  },
+  "frame": {
+    "version": "1",
+    "name": "EthosRadar",
+    "iconUrl": "https://ethosradar.app/icon.png",
+    "splashImageUrl": "https://ethosradar.app/splash.png",
+    "splashBackgroundColor": "#1652F0",
+    "homeUrl": "https://ethosradar.app",
+    "webhookUrl": "https://ethosradar.app/api/webhook",
+    "subtitle": "Trust Network Scanner",
+    "description": "Scan wallet reputations, analyze trust networks, and track Ethos Protocol scores. Features interactive trust graphs, R4R analytics, and viral social sharing for your trust reputation.",
+    "screenshotUrls": [
+      "https://ethosradar.app/screenshot1.png",
+      "https://ethosradar.app/screenshot2.png",
+      "https://ethosradar.app/screenshot3.png"
+    ],
+    "primaryCategory": "finance",
+    "tags": [
+      "trust",
+      "reputation",
+      "ethos",
+      "defi",
+      "analytics"
+    ],
+    "heroImageUrl": "https://ethosradar.app/hero.png",
+    "tagline": "Flex Your Trust Score",
+    "ogTitle": "EthosRadar – Trust Network Scanner",
+    "ogDescription": "Scan wallet reputations and analyze trust networks on Ethos Protocol. Interactive trust graphs, R4R analytics, and social sharing.",
+    "ogImageUrl": "https://ethosradar.app/og.png"
+  }
+}

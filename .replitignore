@@ -1,0 +1,11 @@
+node_modules
+dist
+.cache
+.turbo
+*.log
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+.env.local
+.env.*.local

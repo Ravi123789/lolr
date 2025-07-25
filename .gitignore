@@ -1,0 +1,14 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+.cache
+*.log
+.turbo
+.vscode
+.idea
+Thumbs.db
+.env.local
+.env.*.local

@@ -1,0 +1,24 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjE5MDUyMiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDZlMmNiNmQxMDM2QzAzYzY5MzY4MjE5MjkzNEUwRWJEQjcyZDI3NUIifQ",
+    "payload": "eyJkb21haW4iOiJldGhvc3JhZGFyLmNvbSJ9",
+    "signature": "MHg4YzJiMmRjOWEwYTg2NjU2YTRiYjMzMWE1NDhhYzcwNDI2N2U5Y2M0NTgyNjU3ZTM0NzRjZjRhMWUxMjc4MWJjNzhhMzIxZTk1MTIwMjEwNWY1NzVjMTYwMGQ4YWUxOWI4MGQ3OTdhODI3ZWIyMjk3MjFhZmE1MDNjOTAyNzZkNDFi"
+  },
+  "frame": {
+    "version": "1",
+    "name": "EthosRadar",
+    "iconUrl": "https://ethosradar.com/icon.png",
+    "homeUrl": "https://ethosradar.com",
+    "imageUrl": "https://ethosradar.com/hero.png",
+    "buttonTitle": "Scan Trust Network",
+    "splashImageUrl": "https://ethosradar.com/splash.png",
+    "splashBackgroundColor": "#000000",
+    "webhookUrl": "https://ethosradar.com/api/webhook",
+    "subtitle": "Trust Network Scanner",
+    "description": "Scan wallet reputations, analyze trust networks, and track Ethos Protocol scores with real-time analytics.",
+    "primaryCategory": "social",
+    "tags": ["trust", "reputation", "ethos", "network", "scanner"],
+    "requiredChains": ["eip155:1", "eip155:8453"],
+    "requiredCapabilities": ["actions.composeCast", "actions.openUrl", "actions.close"]
+  }
+}
