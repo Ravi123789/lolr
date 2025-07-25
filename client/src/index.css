@@ -3123,65 +3123,51 @@ input, textarea, [contenteditable="true"] {
     transform: rotate(-1deg);
   }
 
-  /* ===== COMPACT FEATURE HIGHLIGHTS - DESKTOP ONLY ===== */
+  /* ===== DEVELOPER NOTES BOARD - DESKTOP ONLY ===== */
   
-  /* Compact Sticky Note */
-  .compact-sticky-note {
-    width: 180px;
-    padding: 12px;
-    background: linear-gradient(145deg, 
-      hsl(45, 100%, 98%), 
-      hsl(45, 95%, 96%));
-    box-shadow: 
-      0 8px 24px -6px rgba(0, 0, 0, 0.15),
-      inset 0 1px 2px rgba(255, 255, 255, 0.8),
-      inset 0 -1px 1px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    border: 1px solid hsl(45, 85%, 88%);
-    transform: rotate(-1deg);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    animation: stickyFloat 6s ease-in-out infinite;
+  .developer-notes-board {
+    width: 240px;
+    font-family: 'Kalam', cursive;
+    animation: notesFloat 8s ease-in-out infinite;
   }
 
-  html.dark .compact-sticky-note {
-    background: linear-gradient(145deg, 
-      hsl(220, 15%, 16%), 
-      hsl(220, 12%, 14%));
-    border: 1px solid hsl(220, 15%, 25%);
-    box-shadow: 
-      0 8px 24px -6px rgba(0, 0, 0, 0.4),
-      inset 0 1px 2px rgba(255, 255, 255, 0.05),
-      inset 0 -1px 1px rgba(0, 0, 0, 0.2);
-  }
-
-  .compact-sticky-note:hover {
-    transform: rotate(0deg) scale(1.02);
-    box-shadow: 
-      0 12px 32px -8px rgba(0, 0, 0, 0.2),
-      inset 0 1px 2px rgba(255, 255, 255, 0.9),
-      inset 0 -1px 1px rgba(0, 0, 0, 0.08);
-  }
-
-  .sticky-header {
+  .dev-notes-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8px;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, 
+      hsl(220, 25%, 15%), 
+      hsl(220, 20%, 18%));
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
-  .sticky-title {
+  html.dark .dev-notes-header {
+    background: linear-gradient(135deg, 
+      hsl(220, 25%, 12%), 
+      hsl(220, 20%, 15%));
+  }
+
+  .dev-notes-icon {
+    font-size: 16px;
+  }
+
+  .dev-notes-title {
     font-size: 14px;
-    font-weight: 700;
-    color: hsl(25, 85%, 45%);
-    font-family: 'Kalam', cursive;
+    font-weight: 600;
+    color: hsl(0, 0%, 90%);
+    flex: 1;
   }
 
-  html.dark .sticky-title {
-    color: hsl(25, 85%, 55%);
+  .fresh-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 
-  .sticky-pulse {
+  .fresh-dot {
     width: 6px;
     height: 6px;
     background: #22c55e;
@@ -3189,159 +3175,149 @@ input, textarea, [contenteditable="true"] {
     animation: livePulse 2s infinite;
   }
 
-  .sticky-content {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .feature-tag {
-    font-size: 11px;
-    padding: 3px 6px;
-    border-radius: 6px;
+  .fresh-text {
+    font-size: 10px;
+    color: #22c55e;
     font-weight: 500;
-    color: hsl(210, 20%, 45%);
-    background: hsl(210, 25%, 94%);
-    border: 1px solid hsl(210, 20%, 85%);
-    font-family: 'Inter', sans-serif;
   }
 
-  html.dark .feature-tag {
-    color: hsl(210, 20%, 75%);
-    background: hsl(220, 15%, 20%);
-    border: 1px solid hsl(220, 15%, 30%);
-  }
-
-  .feature-tag.active {
-    color: #16a34a;
-    background: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-  }
-
-  /* Feature Highlight Cards */
-  .feature-highlight-card {
-    width: 180px;
-    padding: 12px;
-    border-radius: 14px;
-    backdrop-filter: blur(12px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  .handwritten-note-card {
+    background: linear-gradient(145deg, 
+      hsl(25, 80%, 45%), 
+      hsl(25, 75%, 40%));
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 
+      0 8px 24px -6px rgba(0, 0, 0, 0.3),
+      inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    transform: rotate(-1deg);
     position: relative;
     overflow: hidden;
-    animation: featureFloat 8s ease-in-out infinite;
   }
 
-  .new-features {
+  html.dark .handwritten-note-card {
     background: linear-gradient(145deg, 
-      rgba(59, 130, 246, 0.08), 
-      rgba(29, 78, 216, 0.05));
-    border: 1px solid rgba(59, 130, 246, 0.2);
-    box-shadow: 
-      0 8px 24px -6px rgba(59, 130, 246, 0.15),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-    animation-delay: -2s;
+      hsl(25, 70%, 35%), 
+      hsl(25, 65%, 30%));
   }
 
-  html.dark .new-features {
-    background: linear-gradient(145deg, 
-      rgba(59, 130, 246, 0.12), 
-      rgba(29, 78, 216, 0.08));
-    border: 1px solid rgba(59, 130, 246, 0.25);
-    box-shadow: 
-      0 8px 24px -6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  .handwritten-note-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+    background: #ef4444;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
   }
 
-  .upcoming-features {
-    background: linear-gradient(145deg, 
-      rgba(168, 85, 247, 0.08), 
-      rgba(147, 51, 234, 0.05));
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    box-shadow: 
-      0 8px 24px -6px rgba(168, 85, 247, 0.15),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1);
-    animation-delay: -4s;
+  .note-content {
+    color: white;
   }
 
-  html.dark .upcoming-features {
-    background: linear-gradient(145deg, 
-      rgba(168, 85, 247, 0.12), 
-      rgba(147, 51, 234, 0.08));
-    border: 1px solid rgba(168, 85, 247, 0.25);
-    box-shadow: 
-      0 8px 24px -6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  .note-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fbbf24;
+    transform: rotate(-0.5deg);
   }
 
-  .feature-highlight-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 
-      0 16px 40px -8px rgba(0, 0, 0, 0.25),
-      inset 0 1px 2px rgba(255, 255, 255, 0.15);
+  .note-text {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 12px;
   }
 
-  .feature-header {
+  .note-line {
+    margin-bottom: 4px;
+    transform: rotate(0.2deg);
+  }
+
+  .note-line:nth-child(2n) {
+    transform: rotate(-0.3deg);
+  }
+
+  .note-signature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    opacity: 0.9;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+
+  .signature-name {
+    font-weight: 600;
+    color: #fbbf24;
+  }
+
+  .signature-date {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .whats-inside-section {
+    background: linear-gradient(135deg, 
+      hsl(220, 25%, 20%), 
+      hsl(220, 20%, 25%));
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  html.dark .whats-inside-section {
+    background: linear-gradient(135deg, 
+      hsl(220, 25%, 15%), 
+      hsl(220, 20%, 18%));
+  }
+
+  .whats-inside-header {
     display: flex;
     align-items: center;
     gap: 6px;
     margin-bottom: 8px;
   }
 
-  .feature-badge {
-    font-size: 9px;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  .pencil-icon {
+    font-size: 12px;
   }
 
-  .feature-badge.new {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    color: white;
-    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
-  }
-
-  .feature-badge.upcoming {
-    background: linear-gradient(135deg, #a855f7, #9333ea);
-    color: white;
-    box-shadow: 0 2px 4px rgba(168, 85, 247, 0.3);
-  }
-
-  .feature-title {
+  .whats-inside-title {
     font-size: 12px;
     font-weight: 600;
-    color: hsl(210, 25%, 25%);
-  }
-
-  html.dark .feature-title {
     color: hsl(0, 0%, 90%);
   }
 
-  .feature-list {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .feature-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  .inside-features {
     font-size: 11px;
-    color: hsl(210, 15%, 45%);
-  }
-
-  html.dark .feature-item {
     color: hsl(210, 15%, 75%);
+    line-height: 1.5;
   }
 
-  .feature-icon {
-    font-size: 12px;
-    opacity: 0.8;
+  .inside-item {
+    margin-bottom: 3px;
+    padding-left: 4px;
+    color: hsl(210, 20%, 80%);
   }
 
-  .feature-text {
-    font-weight: 500;
+  html.dark .inside-item {
+    color: hsl(210, 20%, 70%);
+  }
+
+  /* Animations for Developer Notes */
+  @keyframes notesFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
   }
 
   /* ===== ULTRA MODERN STATS DASHBOARD ===== */
