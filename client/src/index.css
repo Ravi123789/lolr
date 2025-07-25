@@ -3410,36 +3410,7 @@ input, textarea, [contenteditable="true"] {
     }
   }
 
-  /* Desktop Expansion for Scanner Section - Only for Desktop Users */
-  @media (min-width: 1024px) {
-    .desktop-trust-scanner-card {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      width: calc(100% - 2rem) !important;
-      max-width: none !important;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .desktop-trust-scanner-card {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      width: calc(100% - 4rem) !important;
-      max-width: none !important;
-      padding: 1.5rem !important;
-      border-radius: 1.25rem !important;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .desktop-trust-scanner-card {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      width: calc(100% - 6rem) !important;
-      max-width: none !important;
-      padding: 2rem !important;
-    }
-  }
+  /* Desktop width override removed - using Tailwind classes directly */
 
     .desktop-platform-badge {
       padding: 0.75rem 1.25rem;
