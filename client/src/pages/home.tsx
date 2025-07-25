@@ -170,33 +170,32 @@ export default function Home() {
   };
 
   return (
-    <main className="max-w-lg md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 pb-20 relative">
-      {/* Modern header bar when user is selected */}
-      {user && (
-        <div className="modern-header-container">
-          <button
-            onClick={handleBackToSearch}
-            className="modern-back-button group"
-          >
-            <div className="back-icon-wrapper">
-              <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-0.5" />
+    <>
+      {/* Mobile Layout - Existing Design */}
+      <main className="xl:hidden max-w-lg md:max-w-4xl lg:max-w-5xl mx-auto px-4 pb-20 relative">
+        {/* Modern header bar when user is selected */}
+        {user && (
+          <div className="modern-header-container">
+            <button
+              onClick={handleBackToSearch}
+              className="modern-back-button group"
+            >
+              <div className="back-icon-wrapper">
+                <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-0.5" />
+              </div>
+              <span className="back-text">Back</span>
+              <div className="back-ripple"></div>
+            </button>
+            
+            <div className="modern-live-status">
+              <div className="live-pulse-dot"></div>
+              <span className="live-text">Live</span>
+              <div className="live-glow"></div>
             </div>
-            <span className="back-text">Back</span>
-            <div className="back-ripple"></div>
-          </button>
-          
-          <div className="modern-live-status">
-            <div className="live-pulse-dot"></div>
-            <span className="live-text">Live</span>
-            <div className="live-glow"></div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Ethos Stats Dashboard - Desktop Only, No User Selected */}
-      {!user && <EthosStatsData />}
-      
-      <WalletScanner />
+        <WalletScanner />
       
       {user ? (
         <>
@@ -569,6 +568,361 @@ export default function Home() {
           </Dialog>
         </div>
       )}
-    </main>
+      </main>
+
+      {/* Desktop Layout - Completely Redesigned */}
+      <main className="hidden xl:block min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-400/10 to-pink-400/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+        </div>
+
+        {/* Three Column Desktop Grid */}
+        <div className="desktop-grid-container">
+          {/* Left Sidebar - Stats Dashboard */}
+          <aside className="left-sidebar">
+            {!user && <EthosStatsData />}
+          </aside>
+
+          {/* Main Content Area */}
+          <section className="main-content-area">
+            {/* Modern header bar when user is selected */}
+            {user && (
+              <div className="desktop-header-container">
+                <button
+                  onClick={handleBackToSearch}
+                  className="desktop-back-button group"
+                >
+                  <div className="back-icon-wrapper">
+                    <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                  </div>
+                  <span className="back-text">Back to Search</span>
+                  <div className="back-ripple"></div>
+                </button>
+                
+                <div className="desktop-live-status">
+                  <div className="live-pulse-dot"></div>
+                  <span className="live-text">Live Network</span>
+                  <div className="live-glow"></div>
+                </div>
+              </div>
+            )}
+
+            {/* Main Scanner Section */}
+            <div className="scanner-wrapper">
+              <WalletScanner />
+            </div>
+
+            {/* User Content */}
+            {user ? (
+              <div className="user-content-wrapper">
+                <TrustScoreDisplay />
+                
+                {/* Premium Quick Actions with modern design */}
+                <section className="desktop-quick-actions">
+                  <div className="actions-grid">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="action-card vouch-card">
+                          <div className="card-content">
+                            <div className="icon-wrapper vouch">
+                              <HandHeart className="h-5 w-5" />
+                            </div>
+                            <div className="text-content">
+                              <div className="title">Vouch Intelligence</div>
+                              <div className="subtitle">Network insights & vouch analysis</div>
+                            </div>
+                          </div>
+                          <div className="card-glow"></div>
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="clay-card border-none w-full max-w-md max-h-[75vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="flex items-center space-x-2">
+                            <HandHeart className="h-4 w-4" style={{ color: '#ff6500' }} />
+                            <span>Vouch Intel</span>
+                          </DialogTitle>
+                        </DialogHeader>
+                        <UserVouchIntel />
+                      </DialogContent>
+                    </Dialog>
+
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="action-card pulse-card">
+                          <div className="card-content">
+                            <div className="icon-wrapper pulse">
+                              <Zap className="h-5 w-5" />
+                            </div>
+                            <div className="text-content">
+                              <div className="title">Score Pulse</div>
+                              <div className="subtitle">Historical score tracking</div>
+                            </div>
+                          </div>
+                          <div className="card-glow"></div>
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="clay-card border-none w-full max-w-md max-h-[85vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="flex items-center space-x-2">
+                            <Zap className="h-5 w-5" style={{ color: '#ff6500' }} />
+                            <span>Score Pulse</span>
+                          </DialogTitle>
+                        </DialogHeader>
+                        <ScorePulse />
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                </section>
+                
+                <FlexScoreShare />
+              </div>
+            ) : (
+              <section className="desktop-welcome-section">
+                <div className="welcome-content">
+                  <h2 className="welcome-title">Trust Intelligence Scanner</h2>
+                  <p className="welcome-subtitle">
+                    Analyze reputation across multiple platforms with modern insights
+                  </p>
+                  <div className="scanning-indicator">
+                    <div className="scan-line"></div>
+                  </div>
+                </div>
+              </section>
+            )}
+          </section>
+
+          {/* Right Sidebar - Feature Highlights */}
+          <aside className="right-sidebar">
+            {!user && (
+              <div className="feature-highlights-container">
+                {/* Compact Status Note */}
+                <div className="compact-sticky-note">
+                  <div className="sticky-header">
+                    <span className="sticky-title">🚀 Trust Radar</span>
+                    <div className="sticky-pulse"></div>
+                  </div>
+                  <div className="sticky-content">
+                    <div className="feature-tag active">✓ Live scanning</div>
+                    <div className="feature-tag">✓ Network analysis</div>
+                  </div>
+                </div>
+
+                {/* New Features */}
+                <div className="feature-highlight-card new-features">
+                  <div className="feature-header">
+                    <span className="feature-badge new">NEW</span>
+                    <span className="feature-title">Latest Features</span>
+                  </div>
+                  <div className="feature-list">
+                    <div className="feature-item">
+                      <span className="feature-icon">⚡</span>
+                      <span className="feature-text">Instant trust scores</span>
+                    </div>
+                    <div className="feature-item">
+                      <span className="feature-icon">🔗</span>
+                      <span className="feature-text">Network visualization</span>
+                    </div>
+                    <div className="feature-item">
+                      <span className="feature-icon">📊</span>
+                      <span className="feature-text">R4R analytics</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Upcoming Features */}
+                <div className="feature-highlight-card upcoming-features">
+                  <div className="feature-header">
+                    <span className="feature-badge upcoming">SOON</span>
+                    <span className="feature-title">Coming Next</span>
+                  </div>
+                  <div className="feature-list">
+                    <div className="feature-item">
+                      <span className="feature-icon">🤖</span>
+                      <span className="feature-text">AI risk scoring</span>
+                    </div>
+                    <div className="feature-item">
+                      <span className="feature-icon">📱</span>
+                      <span className="feature-text">Mobile push alerts</span>
+                    </div>
+                    <div className="feature-item">
+                      <span className="feature-icon">💎</span>
+                      <span className="feature-text">Premium insights</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </aside>
+        </div>
+
+        {/* Quick Actions for non-user state */}
+        {!user && (
+          <section className="desktop-bottom-actions">
+            <div className="actions-container">
+              <div 
+                className="action-tile explore-tile"
+                onClick={() => window.open('https://whitepaper.ethos.network', '_blank')}
+              >
+                <div className="tile-content">
+                  <Users className="tile-icon" />
+                  <div className="tile-text">
+                    <div className="tile-title">Explore Ethos</div>
+                    <div className="tile-subtitle">Learn more</div>
+                  </div>
+                </div>
+              </div>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="action-tile status-tile">
+                    <div className="tile-content">
+                      <Activity className="tile-icon" />
+                      <div className="tile-text">
+                        <div className="tile-title">Network Status</div>
+                        <div className="tile-subtitle">System health</div>
+                      </div>
+                    </div>
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="clay-card border-none w-full max-w-md">
+                  <DialogHeader>
+                    <DialogTitle className="flex items-center space-x-2">
+                      <Activity className="h-5 w-5" style={{ color: '#ff6500' }} />
+                      <span>Network Status</span>
+                    </DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    {isLoadingStatus ? (
+                      <div className="flex items-center justify-center py-8">
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></div>
+                      </div>
+                    ) : networkStatus ? (
+                      <div className="space-y-3">
+                        {networkStatus.error ? (
+                          <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-3">
+                            <div className="flex items-start space-x-2">
+                              <AlertCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
+                              <div className="text-sm text-red-700 dark:text-red-300">
+                                {networkStatus.error}
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm font-medium">Overall Status</span>
+                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                networkStatus.indicator === 'none' 
+                                  ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300'
+                                  : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300'
+                              }`}>
+                                {networkStatus.status}
+                              </span>
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm font-medium">API Status</span>
+                              <div className="flex items-center space-x-1">
+                                {networkStatus.indicator === 'none' ? 
+                                  <Wifi className="h-3 w-3 text-green-500" /> : 
+                                  <WifiOff className="h-3 w-3 text-yellow-500" />
+                                }
+                                <span className="text-xs text-gray-600 dark:text-gray-400">
+                                  {networkStatus.apiStatus}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm font-medium">Database</span>
+                              <span className="text-xs text-gray-600 dark:text-gray-400">
+                                {networkStatus.databaseStatus}
+                              </span>
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm font-medium">Response Time</span>
+                              <span className="text-xs text-gray-600 dark:text-gray-400">
+                                {networkStatus.responseTime}
+                              </span>
+                            </div>
+                            {networkStatus.lastUpdated && (
+                              <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
+                                <div className="text-xs text-gray-500 dark:text-gray-400">
+                                  Last updated: {new Date(networkStatus.lastUpdated).toLocaleString()}
+                                </div>
+                                {networkStatus.pageName && (
+                                  <div className="text-xs text-gray-500 dark:text-gray-400">
+                                    Source: {networkStatus.pageName}
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="text-center py-4 text-gray-500 dark:text-gray-400">
+                        <p className="text-sm">No status data available</p>
+                        <button 
+                          onClick={fetchNetworkStatus}
+                          className="text-orange-500 hover:text-orange-600 text-sm font-medium mt-2"
+                        >
+                          Retry
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <button 
+                      onClick={fetchNetworkStatus}
+                      disabled={isLoadingStatus}
+                      className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-medium py-2 rounded-lg transition-all duration-200 disabled:cursor-not-allowed"
+                    >
+                      {isLoadingStatus ? 'Checking...' : 'Refresh Status'}
+                    </button>
+                  </div>
+                </DialogContent>
+              </Dialog>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="action-tile search-tile">
+                    <div className="tile-content">
+                      <Search className="tile-icon" />
+                      <div className="tile-text">
+                        <div className="tile-title">New Search</div>
+                        <div className="tile-subtitle">Start fresh</div>
+                      </div>
+                    </div>
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="clay-card border-none w-full max-w-md">
+                  <DialogHeader>
+                    <DialogTitle className="flex items-center space-x-2">
+                      <Search className="h-5 w-5" style={{ color: '#ff6500' }} />
+                      <span>New Search</span>
+                    </DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    <p className="text-sm text-gray-600 dark:text-muted-foreground">
+                      Ready to analyze another identity's trust network?
+                    </p>
+                    <button 
+                      onClick={handleBackToSearch}
+                      className="w-full bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-600 hover:via-orange-700 hover:to-orange-800 text-white font-medium py-3 rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl"
+                    >
+                      <div className="flex items-center justify-center space-x-2">
+                        <Search className="h-4 w-4" />
+                        <span>Search Again</span>
+                      </div>
+                    </button>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
+          </section>
+        )}
+      </main>
+    </>
   );
 }
