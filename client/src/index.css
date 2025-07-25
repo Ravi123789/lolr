@@ -1135,7 +1135,7 @@ input, textarea, [contenteditable="true"] {
   /* Desktop Search Input Expansion */
   @media (min-width: 1024px) {
     .desktop-search-wrapper {
-      max-width: 750px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
@@ -1156,7 +1156,7 @@ input, textarea, [contenteditable="true"] {
 
   @media (min-width: 1280px) {
     .desktop-search-wrapper {
-      max-width: 900px;
+      max-width: 1200px;
     }
 
     .desktop-search-container {
@@ -3767,12 +3767,12 @@ input, textarea, [contenteditable="true"] {
   /* Responsive Desktop Layout Adjustments */
   @media (min-width: 1280px) {
     .clay-card.mobile-card {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     
     .trust-scanner-section {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
     }
   }
