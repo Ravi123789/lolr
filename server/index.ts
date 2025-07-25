@@ -60,17 +60,10 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 3000 for local development.
-  // this serves both the API and the client.
-  const port = parseInt(process.env.PORT || '3000', 10);
-  const isDev = app.get("env") === "development";
+  // Use Replit's standard port configuration with fallback
+  const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 5000;
   
   server.listen(port, "0.0.0.0", () => {
     log(`Server running in ${app.get("env")} mode on port ${port}`);
-    if (isDev) {
-      log(`API available at http://localhost:${port}/api`);
-      log(`Frontend available at http://localhost:5173`);
-    }
   });
 })();
