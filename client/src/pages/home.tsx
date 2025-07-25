@@ -366,7 +366,7 @@ export default function Home() {
           // No user selected - show basic home actions
           <div className="grid grid-cols-2 gap-3 mobile-card">
             <div 
-              className="interactive-card p-3 group cursor-pointer"
+              className="glassmorphism-button p-3 group cursor-pointer"
               onClick={() => window.open('https://whitepaper.ethos.network', '_blank')}
             >
               <div className="text-center">
@@ -382,7 +382,7 @@ export default function Home() {
             <Dialog>
               <DialogTrigger asChild>
                 <div 
-                  className="interactive-card p-3 group cursor-pointer"
+                  className="glassmorphism-button p-3 group cursor-pointer"
                   onClick={fetchNetworkStatus}
                 >
                   <div className="text-center">

@@ -3285,6 +3285,65 @@ input, textarea, [contenteditable="true"] {
     font-weight: 500;
   }
 
+  /* Glassmorphism Button Styling */
+  .glassmorphism-button {
+    background: linear-gradient(145deg, 
+      rgba(255, 255, 255, 0.08), 
+      rgba(255, 255, 255, 0.03));
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 
+      0 8px 32px -12px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .glassmorphism-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    border-color: rgba(255, 101, 0, 0.3);
+    box-shadow: 
+      0 12px 40px -12px rgba(255, 101, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  html.dark .glassmorphism-button {
+    background: linear-gradient(145deg, 
+      rgba(255, 255, 255, 0.06), 
+      rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+      0 8px 32px -12px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  html.dark .glassmorphism-button:hover {
+    border-color: rgba(255, 101, 0, 0.25);
+    box-shadow: 
+      0 12px 40px -12px rgba(255, 101, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  /* Modern Scanning Line Animation */
+  @keyframes modernScanningLine {
+    0% {
+      transform: translateX(-100%) scaleX(0.5);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+      transform: translateX(-50%) scaleX(1);
+    }
+    80% {
+      opacity: 1;
+      transform: translateX(50%) scaleX(1);
+    }
+    100% {
+      transform: translateX(100%) scaleX(0.5);
+      opacity: 0;
+    }
+  }
+
   .handwritten-note-card {
     background: linear-gradient(145deg, 
       rgba(255, 255, 255, 0.08), 
