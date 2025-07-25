@@ -60,8 +60,9 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Use Replit's standard port configuration with fallback
-  const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 5000;
+  // Use Replit's PORT environment variable (5000) to satisfy workflow requirements
+  // The vite proxy will be fixed by using relative URLs in frontend
+  const port = parseInt(process.env.PORT || "3000", 10);
   
   server.listen(port, "0.0.0.0", () => {
     log(`Server running in ${app.get("env")} mode on port ${port}`);
