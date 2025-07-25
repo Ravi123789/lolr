@@ -214,7 +214,7 @@ export function WalletScanner() {
   return (
     <>
       <section className="py-4 md:py-8 animate-fade-in">
-        <div className="clay-card mobile-card p-3 md:p-4 mb-3 md:mb-3 relative overflow-hidden mx-auto w-full md:w-full lg:w-full xl:w-full max-w-[1600px]">
+        <div className="clay-card desktop-trust-scanner-card p-3 md:p-6 lg:p-8 mb-3 md:mb-6 relative overflow-hidden mx-auto w-full max-w-[1600px]">
           {/* Subtle background elements */}
           <div className="absolute top-3 right-4 w-6 h-6 md:top-8 md:right-12 md:w-12 md:h-12 bg-gradient-to-br from-violet-500/10 to-purple-500/5 rounded-full blur-sm md:blur-md"></div>
           <div className="absolute bottom-3 left-5 w-4 h-4 md:bottom-8 md:left-10 md:w-8 md:h-8 bg-gradient-to-br from-amber-500/8 to-yellow-500/5 rounded-full blur-sm md:blur-md"></div>
@@ -330,12 +330,12 @@ export function WalletScanner() {
             
           {/* Modern Platform Support Indicators - redesigned with smooth animations */}
           {!showSuggestions && (
-            <div className="flex items-center justify-center gap-2 md:gap-3 relative z-[1] mt-3 md:mt-4">
+            <div className="flex items-center justify-center gap-2 md:gap-4 lg:gap-6 relative z-[1] mt-3 md:mt-6 lg:mt-8">
               <div className="modern-platform-indicator ethereum-indicator group" title="Ethereum Addresses & ENS">
                 <div className="platform-glow ethereum-glow"></div>
                 <div className="platform-content">
                   <div className="platform-icon-modern">
-                    <SiEthereum className="w-3.5 h-3.5" />
+                    <SiEthereum className="w-3.5 h-3.5 lg:w-4 lg:h-4 xl:w-5 xl:h-5" />
                   </div>
                   <span className="platform-text">ETH</span>
                 </div>
@@ -345,7 +345,7 @@ export function WalletScanner() {
                 <div className="platform-glow farcaster-glow"></div>
                 <div className="platform-content">
                   <div className="platform-icon-modern">
-                    <SiFarcaster className="w-3.5 h-3.5" />
+                    <SiFarcaster className="w-3.5 h-3.5 lg:w-4 lg:h-4 xl:w-5 xl:h-5" />
                   </div>
                   <span className="platform-text">FAR</span>
                 </div>
@@ -355,7 +355,7 @@ export function WalletScanner() {
                 <div className="platform-glow twitter-glow"></div>
                 <div className="platform-content">
                   <div className="platform-icon-modern">
-                    <SiX className="w-3.5 h-3.5" />
+                    <SiX className="w-3.5 h-3.5 lg:w-4 lg:h-4 xl:w-5 xl:h-5" />
                   </div>
                   <span className="platform-text">TW</span>
                 </div>
@@ -365,7 +365,7 @@ export function WalletScanner() {
                 <div className="platform-glow discord-glow"></div>
                 <div className="platform-content">
                   <div className="platform-icon-modern">
-                    <SiDiscord className="w-3.5 h-3.5" />
+                    <SiDiscord className="w-3.5 h-3.5 lg:w-4 lg:h-4 xl:w-5 xl:h-5" />
                   </div>
                   <span className="platform-text">DIS</span>
                 </div>
@@ -375,7 +375,7 @@ export function WalletScanner() {
                 <div className="platform-glow telegram-glow"></div>
                 <div className="platform-content">
                   <div className="platform-icon-modern">
-                    <SiTelegram className="w-3.5 h-3.5" />
+                    <SiTelegram className="w-3.5 h-3.5 lg:w-4 lg:h-4 xl:w-5 xl:h-5" />
                   </div>
                   <span className="platform-text">TEL</span>
                 </div>
