@@ -149,17 +149,13 @@ export function TrustScannerRedesigned() {
   // Full scanner interface - completely redesigned for maximum width
   return (
     <>
-      <div className="w-full px-2 py-4">
-        {/* Ultra-wide container with no max-width constraints */}
+      <div className="w-full px-4 py-4">
+        {/* Ultra-wide container constrained to header width */}
         <div 
-          className="w-full relative overflow-hidden rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700"
+          className="w-full relative overflow-hidden rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 max-w-7xl mx-auto"
           style={{
             background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
-            minWidth: '100%',
-            maxWidth: 'none',
-            width: '100vw',
-            marginLeft: 'calc(-50vw + 50%)',
-            marginRight: 'calc(-50vw + 50%)'
+            width: '100%'
           }}
         >
           {/* Dark mode background */}
@@ -350,18 +346,7 @@ export function TrustScannerRedesigned() {
         message="Scanning trust network..."
       />
       
-      {/* Custom styles */}
-      <style jsx>{`
-        @keyframes radarSpin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        
-        @keyframes radarSweep {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
+
     </>
   );
 }
