@@ -170,7 +170,7 @@ export default function Home() {
   };
 
   return (
-    <main className="max-w-lg md:max-w-md lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl mx-auto px-4 pb-20 relative">
+    <main className="max-w-lg md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto px-4 pb-20 relative">
       {/* Modern header bar when user is selected */}
       {user && (
         <div className="modern-header-container">
