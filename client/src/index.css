@@ -3126,28 +3126,23 @@ input, textarea, [contenteditable="true"] {
   /* ===== DEVELOPER NOTES BOARD - DESKTOP ONLY ===== */
   
   .developer-notes-container {
-    background: linear-gradient(145deg, 
-      rgba(255, 255, 255, 0.08), 
-      rgba(255, 255, 255, 0.03));
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--clay-bg);
+    border: 1px solid var(--clay-border);
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 
-      0 8px 32px -12px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: var(--clay-shadow), var(--clay-inner-shadow);
     width: 280px;
     animation: containerFloat 10s ease-in-out infinite;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  html.dark .developer-notes-container {
-    background: linear-gradient(145deg, 
-      rgba(255, 255, 255, 0.06), 
-      rgba(255, 255, 255, 0.02));
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  html.light .developer-notes-container {
+    background: hsl(210, 25%, 95%);
+    border: none !important;
     box-shadow: 
-      0 8px 32px -12px rgba(0, 0, 0, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      0 8px 32px -8px rgba(70, 90, 120, 0.15),
+      inset 0 2px 4px 0 rgba(255, 255, 255, 0.8),
+      inset 0 -1px 2px 0 rgba(70, 90, 120, 0.08);
   }
 
   .developer-notes-board {
