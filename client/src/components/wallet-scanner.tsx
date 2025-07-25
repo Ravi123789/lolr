@@ -220,7 +220,7 @@ export function WalletScanner() {
           <div className="absolute bottom-3 left-5 w-4 h-4 md:bottom-8 md:left-10 md:w-8 md:h-8 bg-gradient-to-br from-amber-500/8 to-yellow-500/5 rounded-full blur-sm md:blur-md"></div>
           
           {/* Responsive header - simple on mobile, handwritten comic style on desktop */}
-          <div className="md:text-center mb-2 md:mb-4 relative z-10">
+          <div className="md:text-center mb-2 md:mb-2 relative z-10">
             {/* Mobile header */}
             <div className="flex items-center justify-between mb-2 md:hidden">
               <div className="flex items-center space-x-1.5">
@@ -233,7 +233,7 @@ export function WalletScanner() {
             
             {/* Desktop header - redesigned with perfect spacing and 2D handwritten style */}
             <div className="hidden md:block">
-              <div className="flex items-center justify-between mb-2 w-full px-4">
+              <div className="flex items-center justify-between mb-1 w-full px-2">
                 <div className="flex items-center space-x-3">
                   <div className="relative">
                     <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg logo-pulse-animation">
@@ -330,7 +330,7 @@ export function WalletScanner() {
             
           {/* Modern Platform Support Indicators - redesigned with smooth animations */}
           {!showSuggestions && (
-            <div className="flex items-center justify-center gap-2 md:gap-3 lg:gap-4 relative z-[1] mt-3 md:mt-4 lg:mt-5">
+            <div className="flex items-center justify-center gap-2 md:gap-3 lg:gap-4 relative z-[1] mt-2 md:mt-2 lg:mt-3">
               <div className="modern-platform-indicator ethereum-indicator group" title="Ethereum Addresses & ENS">
                 <div className="platform-glow ethereum-glow"></div>
                 <div className="platform-content">

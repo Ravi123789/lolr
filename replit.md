@@ -107,6 +107,12 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### January 25, 2025 - Trust Scanner Layout Fix & Migration Complete
+- **Trust Scanner UI Enhancement**: Fixed Trust Scanner container layout to be wider (95vw on desktop) and more compact vertically
+- **Reduced Vertical Spacing**: Minimized header margins and platform button spacing for cleaner, more streamlined appearance  
+- **Desktop Optimization**: Removed max-width constraints that were making the scanner too narrow on desktop displays
+- **Complete Replit Agent Migration**: Successfully migrated EthosRadar from Replit Agent to standard Replit environment with all functionality preserved
+
 ### January 25, 2025 - Glassmorphism Sticky Note Update & Replit Migration Complete
 - **Translucent Glassmorphism Sticky Note**: Updated yellow developer notes card with translucent background using backdrop-filter blur and RGBA orange tints for modern glass effect
 - **Enhanced Text Visibility**: Added text shadows to maintain readability on translucent background while preserving handwritten aesthetic
