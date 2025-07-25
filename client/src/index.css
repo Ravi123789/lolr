@@ -1109,7 +1109,7 @@ input, textarea, [contenteditable="true"] {
       overflow: hidden;
       min-height: 4rem;
       padding: 0.75rem 0;
-      max-width: 900px;
+      max-width: 1050px;
       width: 100%;
       margin: 0 auto;
     }
@@ -1135,7 +1135,7 @@ input, textarea, [contenteditable="true"] {
   /* Desktop Search Input Expansion */
   @media (min-width: 1024px) {
     .desktop-search-wrapper {
-      max-width: 1000px;
+      max-width: 1050px;
       margin: 0 auto;
     }
 
