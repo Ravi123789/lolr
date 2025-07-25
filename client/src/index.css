@@ -1109,7 +1109,7 @@ input, textarea, [contenteditable="true"] {
       overflow: hidden;
       min-height: 4rem;
       padding: 0.75rem 0;
-      max-width: 1050px;
+      max-width: 1600px;
       width: 100%;
       margin: 0 auto;
     }
@@ -3785,12 +3785,12 @@ input, textarea, [contenteditable="true"] {
   /* Responsive Desktop Layout Adjustments */
   @media (min-width: 1280px) {
     .clay-card.mobile-card {
-      max-width: 800px;
+      max-width: 1600px;
       margin: 0 auto;
     }
     
     .trust-scanner-section {
-      max-width: 900px;
+      max-width: 1600px;
       margin: 0 auto;
     }
   }
