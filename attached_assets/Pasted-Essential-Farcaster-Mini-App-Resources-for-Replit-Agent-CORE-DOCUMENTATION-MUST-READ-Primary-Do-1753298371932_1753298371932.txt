@@ -1,0 +1,72 @@
+Essential Farcaster Mini App Resources for Replit Agent
+🎯 CORE DOCUMENTATION (MUST READ)
+Primary Documentation
+
+Main Docs: https://miniapps.farcaster.xyz/
+Complete Specification: https://miniapps.farcaster.xyz/docs/specification
+Getting Started: https://miniapps.farcaster.xyz/docs/getting-started
+Publishing Guide: https://miniapps.farcaster.xyz/docs/guides/publishing
+
+SDK Documentation
+
+SDK Reference: https://miniapps.farcaster.xyz/docs/sdk
+Context API: https://miniapps.farcaster.xyz/docs/sdk/context
+Actions: https://miniapps.farcaster.xyz/docs/sdk/actions
+SDK Changelog: https://miniapps.farcaster.xyz/docs/sdk/changelog
+
+
+🔧 OFFICIAL REPOSITORIES
+
+Main Repo: https://github.com/farcasterxyz/miniapps
+Protocol Discussions: https://github.com/farcasterxyz/protocol/discussions/205
+JSON Signature Spec: https://github.com/farcasterxyz/protocol/discussions/208
+
+
+🏗️ WORKING TEMPLATES
+
+Base Minikit Starter: https://github.com/builders-garden/base-minikit-starter
+Monad Template: https://github.com/monad-developers/monad-miniapp-template
+Awesome Farcaster: https://github.com/a16z/awesome-farcaster
+
+
+🛠️ DEBUGGING TOOLS
+Developer Mode
+
+Enable Dev Tools: https://farcaster.xyz/~/settings/developer-tools
+
+Test Commands
+bash# Test manifest
+curl https://yourdomain.com/.well-known/farcaster.json
+
+# Validate JSON  
+cat farcaster.json | jq '.'
+
+👥 DIRECT HELP CONTACTS
+Farcaster Team
+
+@pirosb3 - Technical Mini Apps support
+@linda - Developer relations
+@deodad - Developer support
+
+Community
+
+/dev channel on Farcaster app
+GitHub Issues: https://github.com/farcasterxyz/miniapps/issues
+
+
+📋 QUICK FIX CHECKLIST
+
+Manifest at: /.well-known/farcaster.json
+Required fields: accountAssociation, frame.version, frame.name, frame.iconUrl, frame.homeUrl
+Image specs: Icon 1024x1024px PNG, Splash 200x200px
+Character limits: name (32), description (170)
+HTTPS only for all URLs
+
+
+⚡ WHEN STUCK
+
+Check specification first: https://miniapps.farcaster.xyz/docs/specification
+Validate manifest JSON structure
+Test image URLs directly in browser
+Contact @pirosb3 on Farcaster with specific error
+Open GitHub issue with reproduction steps

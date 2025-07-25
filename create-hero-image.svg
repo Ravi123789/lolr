@@ -1,0 +1,86 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#heroGrad)"/>
+  
+  <!-- Network nodes background pattern -->
+  <g opacity="0.1">
+    <circle cx="100" cy="80" r="3" fill="white"/>
+    <circle cx="200" cy="120" r="3" fill="white"/>
+    <circle cx="350" cy="90" r="3" fill="white"/>
+    <circle cx="450" cy="140" r="3" fill="white"/>
+    <circle cx="150" cy="200" r="3" fill="white"/>
+    <circle cx="300" cy="180" r="3" fill="white"/>
+    <circle cx="500" cy="200" r="3" fill="white"/>
+    <circle cx="80" cy="280" r="3" fill="white"/>
+    <circle cx="250" cy="320" r="3" fill="white"/>
+    <circle cx="420" cy="300" r="3" fill="white"/>
+    
+    <!-- Connection lines -->
+    <line x1="100" y1="80" x2="200" y2="120" stroke="white" stroke-width="1"/>
+    <line x1="200" y1="120" x2="350" y2="90" stroke="white" stroke-width="1"/>
+    <line x1="350" y1="90" x2="450" y2="140" stroke="white" stroke-width="1"/>
+    <line x1="150" y1="200" x2="300" y2="180" stroke="white" stroke-width="1"/>
+    <line x1="300" y1="180" x2="500" y2="200" stroke="white" stroke-width="1"/>
+    <line x1="80" y1="280" x2="250" y2="320" stroke="white" stroke-width="1"/>
+    <line x1="250" y1="320" x2="420" y2="300" stroke="white" stroke-width="1"/>
+  </g>
+  
+  <!-- Central radar/eye icon -->
+  <g transform="translate(300,200)" filter="url(#glow)">
+    <!-- Radar circles -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="white" stroke-width="2"/>
+    
+    <!-- Eye shape -->
+    <ellipse cx="0" cy="0" rx="35" ry="20" fill="white" opacity="0.9"/>
+    <circle cx="0" cy="0" r="12" fill="#1E40AF"/>
+    <circle cx="3" cy="-3" r="4" fill="white"/>
+    
+    <!-- Scanning line -->
+    <line x1="0" y1="0" x2="50" y2="-20" stroke="#60A5FA" stroke-width="3" opacity="0.8">
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+                        from="0 0 0" to="360 0 0" dur="4s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Title -->
+  <text x="300" y="120" font-family="Arial, sans-serif" font-size="42" font-weight="bold" 
+        text-anchor="middle" fill="white" filter="url(#glow)">EthosRadar</text>
+  
+  <!-- Subtitle -->
+  <text x="300" y="150" font-family="Arial, sans-serif" font-size="18" 
+        text-anchor="middle" fill="white" opacity="0.9">Trust Network Scanner</text>
+  
+  <!-- Bottom tagline -->
+  <text x="300" y="340" font-family="Arial, sans-serif" font-size="16" 
+        text-anchor="middle" fill="white" opacity="0.8">Powered by Ethos Protocol</text>
+  
+  <!-- Trust score indicators -->
+  <g transform="translate(50,50)" opacity="0.7">
+    <circle cx="0" cy="0" r="15" fill="#10B981"/>
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="12" font-weight="bold" 
+          text-anchor="middle" fill="white">1850</text>
+  </g>
+  
+  <g transform="translate(550,350)" opacity="0.7">
+    <circle cx="0" cy="0" r="15" fill="#F59E0B"/>
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="12" font-weight="bold" 
+          text-anchor="middle" fill="white">1200</text>
+  </g>
+</svg>

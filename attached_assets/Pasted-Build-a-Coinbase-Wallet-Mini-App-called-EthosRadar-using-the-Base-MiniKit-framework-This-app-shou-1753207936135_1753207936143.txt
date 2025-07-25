@@ -1,0 +1,157 @@
+Build a Coinbase Wallet Mini App called "EthosRadar" using the Base MiniKit framework.
+This app should focus on the Ethos Protocol, allowing users to scan wallet reputations, analyze trust networks, view R4R (Reciprocal Review) analytics, track wallets, and set up trust alerts.
+The UI/UX should match the Coinbase Wallet Mini App style with modern animations, live interactions, clean fonts, dark/light theme toggle, and interactive graphs.
+
+Use the following links and documentation to guide development:
+
+🧱 Base Mini App Development:
+Introduction: https://docs.base.org/base-app/introduction/mini-apps
+
+Minikit Quickstart: https://docs.base.org/base-app/build-with-minikit/quickstart
+
+🔗 Ethos Protocol:
+Ethosians Reference: https://www.ethosians.com/home
+
+Official Docs: https://developers.ethos.network/
+
+API v1 (Use for search and trust network): https://developers.ethos.network/api-documentation/api-v2
+
+API v2 (Use for scores, wallets, reviews): https://developers.ethos.network/api-documentation/api-v1-deprecated
+
+📊 R4R & Source Code:
+R4R GitHub: https://github.com/trust-ethos/ethos-r4r
+
+R4R Live Demo: https://ethos-r4r.deno.dev/
+
+Ethos GitHub (All tools): https://github.com/trust-ethos
+
+🎨 UI Expectations:
+Use modern UI (like Coinbase Wallet beta apps)
+
+Add trust graphs using d3.js or vis.js
+
+Animate reputation and trust score changes
+
+Mobile responsive, clean UX, fast performance
+
+Add as many useful features as possible using the above APIs and logic from ethos-r4r.
+The app should be visually attractive, fast, and immediately useful to users inside Coinbase Wallet.
+
+You can now paste this directly into Replit's agent prompt for full build initiation. Let me know if you want a custom logo, animation packs, or feature roadmap.
+
+
+
+
+
+
+
+
+You said:
+ok it should not be just same r4r make it unique and eye catchy features like flex your trust score using cast button with cool idea like this and make sure ethos api is 100% working and reyurning real data test api all
+
+
+ChatGPT said:
+Here’s an updated, enhanced prompt for Replit Agent, with unique features beyond just R4R, and explicitly asking it to test all Ethos APIs, ensure real data is fetched, and design the app with viral-worthy UX/UI and interactive elements like "Flex Your Trust Score" button.
+
+⚙️ Replit Agent Prompt (Final)
+Build a Coinbase Wallet Mini App called "EthosRadar" using the Base MiniKit framework.
+
+This mini app should deeply integrate with the Ethos Protocol and go far beyond the existing R4R app. Your goal is to make it more useful, more viral, and visually stunning, with interactive reputation tools.
+
+🧠 Key Functional Features:
+✅ 1. Wallet Reputation Scanner
+User enters any wallet address and sees full reputation profile:
+
+Trust Score
+
+Number of trusted accounts
+
+Trust categories
+
+Recent changes in reputation
+
+Use Ethos API v2/v1 endpoints. Must test live data and ensure responses are accurate.
+
+🕸 2. Trust Network Graph
+Display a 2D or radial graph showing:
+
+Who trusts this wallet
+
+Who they trust
+
+Strength of trust lines
+
+Use d3.js or vis.js to animate the graph.
+
+💬 3. "Flex Your Trust Score" Button
+A viral feature: Add a "Cast" button to let users brag about their Trust Score publicly.
+
+Example output:
+
+“🛡 Just scanned my @ethos reputation — I have 87% Trust Score with 24 mutual trusters. Check your score on EthosRadar 🔍”
+
+Include auto-generated image or badge (optional) to share in Farcaster or Lens.
+
+⚖️ 4. Unique R4R Analyzer
+Build your own version of the R4R scoring system, using core logic from ethos-r4r repo, but:
+
+Add extra data like date of first review, frequency of interactions, etc.
+
+Show a heatmap of trust intensity over time.
+
+🧠 5. Wallet Watchlist + Alerts
+Allow users to watch specific wallets.
+
+Notify when:
+
+Trust score drops
+
+They get trusted/untrusted by others
+
+You can simulate push notifications or use visual alerts for this mini app.
+
+🧩 Design & UX Requirements:
+Match Coinbase Wallet Mini App UI:
+
+Clean layout, mobile-first
+
+Dark + light toggle
+
+Rounded cards, smooth animations, rich hover/tap effects
+
+Use Framer Motion or Lottie for cool UI animations
+
+Add loading shimmer skeletons when fetching API data
+
+Include tooltips or badges for trust levels (e.g. "Highly Trusted", "New Wallet", etc.)
+
+🛠 Dev Stack & Resources:
+🧱 Coinbase Base App Docs:
+https://docs.base.org/base-app/introduction/mini-apps
+
+https://docs.base.org/base-app/build-with-minikit/quickstart
+
+🔗 Ethos API + Docs:
+Official Docs: https://developers.ethos.network/
+
+API v1 (search, trust network): https://developers.ethos.network/api-documentation/api-v2
+
+API v2 (reputation scores): https://developers.ethos.network/api-documentation/api-v1-deprecated
+
+📊 R4R and Source Logic:
+R4R GitHub: https://github.com/trust-ethos/ethos-r4r
+
+R4R Live App: https://ethos-r4r.deno.dev/
+
+Full Trust-Ethos tools: https://github.com/trust-ethos
+
+📌 Special Instructions:
+Ensure all API endpoints return real live data (test it).
+
+Fallback handling for empty or error responses.
+
+Avoid copying existing R4R UI — make it more animated, beautiful, and viral.
+
+Use your own creativity to add new reputation-based features or visualization modes.
+
+Build a tool people will love to share, trust to use, and brag about.

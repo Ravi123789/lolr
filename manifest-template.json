@@ -1,0 +1,27 @@
+{
+  "accountAssociation": {
+    "header": "REPLACE_WITH_GENERATED_HEADER_FROM_WARPCAST_TOOLS",
+    "payload": "REPLACE_WITH_GENERATED_PAYLOAD_FROM_WARPCAST_TOOLS",
+    "signature": "REPLACE_WITH_GENERATED_SIGNATURE_FROM_WARPCAST_TOOLS"
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "EthosRadar",
+    "iconUrl": "https://ethosradar.com/icon.png",
+    "homeUrl": "https://ethosradar.com",
+    "imageUrl": "https://ethosradar.com/hero.png",
+    "buttonTitle": "Scan Trust Network",
+    "splashImageUrl": "https://ethosradar.com/splash.png",
+    "splashBackgroundColor": "#1E40AF",
+    "webhookUrl": "https://ethosradar.com/api/webhook",
+    "requiredChains": [
+      "eip155:1",
+      "eip155:8453"
+    ],
+    "requiredCapabilities": [
+      "miniApp.composeCast",
+      "miniApp.openUrl",
+      "miniApp.close"
+    ]
+  }
+}
