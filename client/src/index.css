@@ -3514,44 +3514,61 @@ input, textarea, [contenteditable="true"] {
   /* Desktop Grid Layout */
   .desktop-grid-container {
     display: grid;
-    grid-template-columns: 300px 1fr 280px;
-    gap: 2rem;
-    height: 100vh;
+    grid-template-columns: 280px 1fr 280px;
+    gap: 3rem;
+    min-height: 100vh;
     padding: 2rem;
     position: relative;
     z-index: 1;
+    max-width: 1600px;
+    margin: 0 auto;
   }
 
   .left-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
   }
 
   .main-content-area {
     display: flex;
     flex-direction: column;
-    max-width: 900px;
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 
   .right-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 2rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
   }
 
   /* Feature Highlights Container */
   .feature-highlights-container {
-    position: fixed;
-    top: 8rem;
-    right: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    z-index: 30;
+    gap: 1.5rem;
+    width: 100%;
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   /* Desktop Header */
@@ -3627,47 +3644,102 @@ input, textarea, [contenteditable="true"] {
 
   /* Scanner Wrapper */
   .scanner-wrapper {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.4), 
+      rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    box-shadow: 
+      0 12px 32px -8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  }
+
+  html.dark .scanner-wrapper {
+    background: linear-gradient(135deg, 
+      rgba(15, 23, 42, 0.4), 
+      rgba(15, 23, 42, 0.2));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 12px 32px -8px rgba(0, 0, 0, 0.2),
+      inset 0 1px 2px rgba(255, 255, 255, 0.03);
   }
 
   /* Desktop Welcome Section */
   .desktop-welcome-section {
-    padding: 4rem 2rem;
+    padding: 6rem 3rem;
     text-align: center;
     background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.6), 
-      rgba(255, 255, 255, 0.3));
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 24px;
-    margin-bottom: 2rem;
+      rgba(255, 255, 255, 0.8), 
+      rgba(255, 255, 255, 0.5));
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 32px;
+    margin-bottom: 3rem;
+    box-shadow: 
+      0 20px 40px -10px rgba(0, 0, 0, 0.1),
+      inset 0 1px 2px rgba(255, 255, 255, 0.9);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .desktop-welcome-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 101, 0, 0.5), 
+      transparent);
   }
 
   html.dark .desktop-welcome-section {
     background: linear-gradient(135deg, 
-      rgba(15, 23, 42, 0.6), 
-      rgba(15, 23, 42, 0.3));
-    border: 1px solid rgba(255, 255, 255, 0.1);
+      rgba(15, 23, 42, 0.8), 
+      rgba(15, 23, 42, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 20px 40px -10px rgba(0, 0, 0, 0.3),
+      inset 0 1px 2px rgba(255, 255, 255, 0.05);
   }
 
   .welcome-title {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 800;
     color: hsl(210, 25%, 15%);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, 
+      hsl(210, 25%, 15%), 
+      hsl(25, 85%, 45%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   html.dark .welcome-title {
-    color: hsl(0, 0%, 95%);
+    background: linear-gradient(135deg, 
+      hsl(0, 0%, 95%), 
+      hsl(25, 85%, 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .welcome-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: hsl(210, 15%, 45%);
-    margin-bottom: 2rem;
-    max-width: 500px;
+    margin-bottom: 3rem;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
+    font-weight: 400;
   }
 
   html.dark .welcome-subtitle {
@@ -3675,13 +3747,19 @@ input, textarea, [contenteditable="true"] {
   }
 
   .scanning-indicator {
-    width: 200px;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
+    width: 300px;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  html.dark .scanning-indicator {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .scan-line {
@@ -3689,11 +3767,12 @@ input, textarea, [contenteditable="true"] {
     height: 100%;
     background: linear-gradient(90deg, 
       transparent,
-      #3b82f6,
-      #ff6500,
-      #a855f7,
+      rgba(59, 130, 246, 0.6),
+      rgba(255, 101, 0, 0.8),
+      rgba(168, 85, 247, 0.6),
       transparent);
-    animation: modernScanningLine 3s linear infinite;
+    animation: modernScanningLine 4s ease-in-out infinite;
+    border-radius: 3px;
   }
 
   /* Desktop Quick Actions */
@@ -3804,61 +3883,83 @@ input, textarea, [contenteditable="true"] {
 
   /* Desktop Bottom Actions */
   .desktop-bottom-actions {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
+    margin-top: auto;
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .actions-container {
     display: flex;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 1.25rem 2rem;
     background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.95), 
-      rgba(255, 255, 255, 0.85));
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
+      rgba(255, 255, 255, 0.98), 
+      rgba(255, 255, 255, 0.92));
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
     box-shadow: 
-      0 8px 24px -6px rgba(0, 0, 0, 0.1),
-      inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      0 12px 32px -8px rgba(0, 0, 0, 0.12),
+      inset 0 1px 2px rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   html.dark .actions-container {
     background: linear-gradient(135deg, 
-      rgba(15, 23, 42, 0.95), 
-      rgba(15, 23, 42, 0.85));
-    border: 1px solid rgba(255, 255, 255, 0.1);
+      rgba(15, 23, 42, 0.98), 
+      rgba(15, 23, 42, 0.92));
+    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 
-      0 8px 24px -6px rgba(0, 0, 0, 0.3),
-      inset 0 1px 2px rgba(255, 255, 255, 0.05);
+      0 12px 32px -8px rgba(0, 0, 0, 0.35),
+      inset 0 1px 2px rgba(255, 255, 255, 0.08);
   }
 
   .action-tile {
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
+    padding: 1.25rem 1.75rem;
+    border-radius: 16px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.6), 
-      rgba(255, 255, 255, 0.3));
-    border: 1px solid rgba(255, 255, 255, 0.4);
+      rgba(255, 255, 255, 0.8), 
+      rgba(255, 255, 255, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .action-tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 101, 0, 0.1), 
+      transparent);
+    transition: left 0.6s ease;
+  }
+
+  .action-tile:hover::before {
+    left: 100%;
   }
 
   html.dark .action-tile {
     background: linear-gradient(135deg, 
-      rgba(30, 41, 59, 0.6), 
-      rgba(30, 41, 59, 0.3));
-    border: 1px solid rgba(255, 255, 255, 0.1);
+      rgba(30, 41, 59, 0.8), 
+      rgba(30, 41, 59, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .action-tile:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: 
-      0 8px 24px -6px rgba(0, 0, 0, 0.15),
-      inset 0 1px 2px rgba(255, 255, 255, 0.2);
+      0 12px 32px -8px rgba(0, 0, 0, 0.18),
+      inset 0 1px 2px rgba(255, 255, 255, 0.3);
   }
 
   .tile-content {
@@ -3918,20 +4019,21 @@ input, textarea, [contenteditable="true"] {
 
   /* Compact Sticky Note */
   .compact-sticky-note {
-    width: 240px;
+    width: 100%;
+    max-width: 260px;
     background: linear-gradient(135deg, 
       #fef9c3, 
       #fde047, 
       #facc15);
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: 12px;
+    padding: 1.25rem;
     box-shadow: 
-      0 4px 12px rgba(0, 0, 0, 0.1),
+      0 8px 20px rgba(0, 0, 0, 0.12),
       inset 0 1px 2px rgba(255, 255, 255, 0.6);
-    transform: rotate(-1deg);
-    transition: all 0.3s ease;
+    transform: rotate(-1.5deg);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .compact-sticky-note:hover {
@@ -3982,18 +4084,19 @@ input, textarea, [contenteditable="true"] {
 
   /* Feature Highlight Cards */
   .feature-highlight-card {
-    width: 240px;
+    width: 100%;
+    max-width: 260px;
     background: linear-gradient(135deg, 
       rgba(255, 255, 255, 0.95), 
       rgba(255, 255, 255, 0.85));
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 16px;
-    padding: 1.5rem;
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 1.75rem;
     box-shadow: 
-      0 8px 24px -6px rgba(0, 0, 0, 0.1),
+      0 12px 32px -8px rgba(0, 0, 0, 0.12),
       inset 0 1px 2px rgba(255, 255, 255, 0.9);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   html.dark .feature-highlight-card {
