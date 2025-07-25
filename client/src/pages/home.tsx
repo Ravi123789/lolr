@@ -173,7 +173,7 @@ export default function Home() {
     <main className="max-w-lg md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto px-4 pb-20 relative">
       {/* Modern header bar when user is selected */}
       {user && (
-        <div className="modern-header-container">
+        <div className="modern-header-container max-w-lg md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto">
           <button
             onClick={handleBackToSearch}
             className="modern-back-button group"
