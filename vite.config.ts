@@ -4,10 +4,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    runtimeErrorOverlay(),
-  ],
+  plugins: [react(), runtimeErrorOverlay()],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -25,10 +22,10 @@ export default defineConfig({
     port: 5173,
     strictPort: false,
     proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
+      "/api": {
+        target: "http://127.0.0.1:5000",
         changeOrigin: true,
-      }
+      },
     },
     fs: {
       strict: true,
