@@ -3425,8 +3425,8 @@ input, textarea, [contenteditable="true"] {
     }
 
     .desktop-trust-scanner-card {
-      max-width: 95% !important;
-      width: 95% !important;
+      max-width: 75% !important;
+      width: 75% !important;
       padding: 1.25rem !important;
       margin-left: auto !important;
       margin-right: auto !important;
@@ -3440,8 +3440,8 @@ input, textarea, [contenteditable="true"] {
     }
 
     .desktop-trust-scanner-card {
-      max-width: 90% !important;
-      width: 90% !important;
+      max-width: 70% !important;
+      width: 70% !important;
       padding: 1.5rem !important;
       border-radius: 1.25rem !important;
       margin-left: auto !important;
@@ -3451,8 +3451,8 @@ input, textarea, [contenteditable="true"] {
 
   @media (min-width: 1536px) {
     .desktop-trust-scanner-card {
-      max-width: 85% !important;
-      width: 85% !important;
+      max-width: 65% !important;
+      width: 65% !important;
       padding: 2rem !important;
       margin-left: auto !important;
       margin-right: auto !important;
