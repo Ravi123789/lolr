@@ -213,16 +213,16 @@ export function WalletScanner() {
   // Full search interface with responsive design - Enhanced for desktop, original for mobile
   return (
     <>
-      <section className="py-3 md:py-4 animate-fade-in">
-        <div className="clay-card p-3 md:p-4 lg:p-4 mb-3 md:mb-4 relative overflow-hidden w-full lg:max-w-4xl xl:max-w-5xl mx-auto">
+      <section className="py-2 md:py-3 animate-fade-in">
+        <div className="clay-card p-2 md:p-3 lg:p-3 mb-2 md:mb-3 relative overflow-hidden w-full lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
           {/* Subtle background elements */}
           <div className="absolute top-3 right-4 w-6 h-6 md:top-8 md:right-12 md:w-12 md:h-12 bg-gradient-to-br from-violet-500/10 to-purple-500/5 rounded-full blur-sm md:blur-md"></div>
           <div className="absolute bottom-3 left-5 w-4 h-4 md:bottom-8 md:left-10 md:w-8 md:h-8 bg-gradient-to-br from-amber-500/8 to-yellow-500/5 rounded-full blur-sm md:blur-md"></div>
           
           {/* Responsive header - simple on mobile, handwritten comic style on desktop */}
-          <div className="md:text-center mb-2 md:mb-1 relative z-10">
+          <div className="md:text-center mb-1 md:mb-0.5 relative z-10">
             {/* Mobile header */}
-            <div className="flex items-center justify-between mb-2 md:hidden">
+            <div className="flex items-center justify-between mb-1 md:hidden">
               <div className="flex items-center space-x-1.5">
                 <Sparkles className="h-3.5 w-3.5 text-orange-500" />
                 <h2 className="text-sm font-semibold text-gray-800 dark:text-white heading">
@@ -233,7 +233,7 @@ export function WalletScanner() {
             
             {/* Desktop header - redesigned with perfect spacing and 2D handwritten style */}
             <div className="hidden md:block">
-              <div className="flex items-center justify-between mb-1 w-full px-2">
+              <div className="flex items-center justify-between mb-0.5 w-full px-2">
                 <div className="flex items-center space-x-3">
                   <div className="relative">
                     <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg logo-pulse-animation">
@@ -254,7 +254,7 @@ export function WalletScanner() {
           </div>
             
           {/* Responsive Search Bar - compact on mobile, large on desktop */}
-          <div className="relative mb-2 md:mb-1.5 z-10 desktop-search-wrapper">
+          <div className="relative mb-1 md:mb-1 z-10 desktop-search-wrapper">
             <div className={`relative clay-input-container desktop-search-container ${isFocused ? 'focused' : ''} ${isHovered ? 'hovered' : ''} ${!query ? 'empty-search-highlight' : ''}`}>
               {/* Search icon - responsive sizing */}
               <div className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
@@ -280,7 +280,7 @@ export function WalletScanner() {
                 autoCorrect="off"
                 autoCapitalize="off"
                 spellCheck="false"
-                className="w-full h-8 lg:h-12 xl:h-14 pl-10 lg:pl-16 pr-10 lg:pr-16 bg-transparent border-none text-white placeholder:text-gray-400 dark:placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm lg:text-base xl:text-lg font-medium text-center desktop-search-input"
+                className="w-full h-8 lg:h-10 xl:h-11 pl-10 lg:pl-16 pr-10 lg:pr-16 bg-transparent border-none text-white placeholder:text-gray-400 dark:placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm lg:text-base xl:text-lg font-medium text-center desktop-search-input"
                 style={{
                   textDecoration: 'none',
                   textDecorationLine: 'none',
@@ -315,7 +315,7 @@ export function WalletScanner() {
           
           {/* Subtle hint text for new users - only shown when search box is empty and not focused */}
           {!query && !isFocused && (
-            <div className="text-center text-xs text-gray-500 dark:text-gray-400 mt-1 mb-1">
+            <div className="text-center text-xs text-gray-500 dark:text-gray-400 mt-0.5 mb-0.5">
               <span>Enter any wallet address or social handle to check trust score</span>
             </div>
           )}
@@ -330,7 +330,7 @@ export function WalletScanner() {
             
           {/* Modern Platform Support Indicators - redesigned with smooth animations */}
           {!showSuggestions && (
-            <div className="flex items-center justify-center gap-2 md:gap-3 lg:gap-4 relative z-[1] mt-2 md:mt-2 lg:mt-3">
+            <div className="flex items-center justify-center gap-2 md:gap-3 lg:gap-4 relative z-[1] mt-1 md:mt-1 lg:mt-1.5">
               <div className="modern-platform-indicator ethereum-indicator group" title="Ethereum Addresses & ENS">
                 <div className="platform-glow ethereum-glow"></div>
                 <div className="platform-content">
