@@ -149,14 +149,17 @@ export function TrustScannerRedesigned() {
   // Full scanner interface - completely redesigned for maximum width
   return (
     <>
-      <div className="w-full px-4 py-4">
+      <div className="w-full px-2 py-4">
         {/* Ultra-wide container with no max-width constraints */}
         <div 
           className="w-full relative overflow-hidden rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700"
           style={{
             background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%)',
             minWidth: '100%',
-            maxWidth: 'none'
+            maxWidth: 'none',
+            width: '100vw',
+            marginLeft: 'calc(-50vw + 50%)',
+            marginRight: 'calc(-50vw + 50%)'
           }}
         >
           {/* Dark mode background */}
@@ -235,8 +238,8 @@ export function TrustScannerRedesigned() {
               </p>
             </div>
             
-            {/* Ultra-wide search container */}
-            <div className="w-full max-w-none mx-auto">
+            {/* Ultra-wide search container - Maximum width */}
+            <div className="w-full max-w-none mx-auto px-0">
               <div 
                 className={`relative w-full rounded-2xl transition-all duration-300 ${
                   isFocused 
@@ -248,7 +251,9 @@ export function TrustScannerRedesigned() {
                 style={{
                   background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%)',
                   border: '2px solid rgba(255, 101, 0, 0.2)',
-                  minHeight: '80px'
+                  minHeight: '90px',
+                  width: '100%',
+                  maxWidth: 'none'
                 }}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
@@ -256,7 +261,7 @@ export function TrustScannerRedesigned() {
                 {/* Dark mode overlay */}
                 <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-gray-800 dark:to-gray-700 dark:opacity-95 rounded-2xl"></div>
                 
-                <div className="relative z-10 flex items-center space-x-6 p-6">
+                <div className="relative z-10 flex items-center space-x-8 p-8">
                   {/* Search icon */}
                   <div className="flex-shrink-0">
                     {searchMutation.isPending ? (
@@ -266,7 +271,7 @@ export function TrustScannerRedesigned() {
                     )}
                   </div>
                   
-                  {/* Search input - takes full width */}
+                  {/* Search input - maximum width utilization */}
                   <Input
                     ref={inputRef}
                     type="text"
@@ -276,10 +281,12 @@ export function TrustScannerRedesigned() {
                     onKeyPress={handleKeyPress}
                     onFocus={handleInputFocus}
                     onBlur={handleInputBlur}
-                    className="flex-1 bg-transparent border-none text-gray-800 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 text-xl font-medium py-4"
+                    className="flex-1 bg-transparent border-none text-gray-800 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 text-2xl font-medium py-6"
                     style={{
                       minWidth: '0',
-                      width: '100%'
+                      width: '100%',
+                      maxWidth: 'none',
+                      flex: '1 1 auto'
                     }}
                   />
                   
