@@ -891,6 +891,27 @@ input, textarea, [contenteditable="true"] {
     padding: 0 12px;
   }
   
+  @media (min-width: 768px) {
+    .mobile-container {
+      max-width: 100%;
+      padding: 0 24px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .mobile-container {
+      max-width: 1200px;
+      padding: 0 32px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .mobile-container {
+      max-width: 1600px;
+      padding: 0 40px;
+    }
+  }
+  
   .mobile-card {
     margin: 0 12px 12px 12px;
   }
@@ -1109,7 +1130,7 @@ input, textarea, [contenteditable="true"] {
       overflow: hidden;
       min-height: 4rem;
       padding: 0.75rem 0;
-      max-width: 1800px;
+      max-width: 100%;
       width: 100%;
       margin: 0 auto;
     }
@@ -1135,8 +1156,9 @@ input, textarea, [contenteditable="true"] {
   /* Desktop Search Input Expansion */
   @media (min-width: 1024px) {
     .desktop-search-wrapper {
-      max-width: 1400px;
+      max-width: 100%;
       margin: 0 auto;
+      width: 100%;
     }
 
     .desktop-search-container {
@@ -1156,13 +1178,15 @@ input, textarea, [contenteditable="true"] {
 
   @media (min-width: 1280px) {
     .desktop-search-wrapper {
-      max-width: 1600px;
+      max-width: 100%;
+      width: 100%;
     }
 
     .desktop-search-container {
       min-height: 3rem;
       padding: 0.625rem 0;
       border-radius: 1.5rem;
+      width: 100%;
     }
 
     .desktop-search-input {
@@ -1174,13 +1198,15 @@ input, textarea, [contenteditable="true"] {
 
   @media (min-width: 1536px) {
     .desktop-search-wrapper {
-      max-width: 1800px;
+      max-width: 100%;
+      width: 100%;
     }
 
     .desktop-search-container {
       min-height: 3.25rem;
       padding: 0.75rem 0;
       border-radius: 1.75rem;
+      width: 100%;
     }
 
     .desktop-search-input {
@@ -3785,12 +3811,12 @@ input, textarea, [contenteditable="true"] {
   /* Responsive Desktop Layout Adjustments */
   @media (min-width: 1280px) {
     .clay-card.mobile-card {
-      max-width: 1800px;
+      max-width: 100%;
       margin: 0 auto;
     }
     
     .trust-scanner-section {
-      max-width: 1800px;
+      max-width: 100%;
       margin: 0 auto;
     }
   }

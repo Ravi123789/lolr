@@ -63,7 +63,7 @@ export function WalletScanner() {
   const searchMutation = useSearchUser();
   const { user, setUser } = useUserProfile();
   const inputRef = useRef<HTMLInputElement>(null);
-  
+
   // Show compact version when user data is loaded
   const isCompactMode = !!user;
 
@@ -86,7 +86,7 @@ export function WalletScanner() {
   const handleSuggestionSelect = async (suggestion: { userkey: string; displayName: string; username: string; avatarUrl?: string; score?: number; description?: string }) => {
     setQuery(suggestion.displayName || suggestion.username || suggestion.userkey);
     setShowSuggestions(false);
-    
+
     // Convert suggestion directly to user object with basic data, stats will be fetched separately
     const userData = {
       id: 0,
@@ -150,7 +150,7 @@ export function WalletScanner() {
         <div className="modern-compact-search relative overflow-hidden">
           {/* Subtle background elements for compact search */}
           <div className="absolute top-1 right-2 w-4 h-4 bg-gradient-to-br from-emerald-500/10 to-teal-500/5 rounded-full blur-sm"></div>
-          
+
           <div className="search-input-wrapper">
             <div className="search-icon-container">
               {searchMutation.isPending ? (
@@ -159,7 +159,7 @@ export function WalletScanner() {
                 <Search className="search-icon" />
               )}
             </div>
-            
+
               <Input
                 ref={inputRef}
                 type="text"
@@ -184,14 +184,14 @@ export function WalletScanner() {
               <Zap className="h-3 w-3" />
             </Button>
           </div>
-          
+
           {/* Hint text for compact mode - only shown when search box is empty and not focused */}
           {!query && !isFocused && (
             <div className="text-center text-xs text-gray-500 dark:text-gray-400 mt-1 mb-1">
               <span>Enter any wallet or handle to check trust score</span>
             </div>
           )}
-          
+
           {/* Compact suggestions */}
           <div className="relative">
             <SearchSuggestions
@@ -218,7 +218,7 @@ export function WalletScanner() {
           {/* Subtle background elements */}
           <div className="absolute top-3 right-4 w-6 h-6 md:top-8 md:right-12 md:w-12 md:h-12 bg-gradient-to-br from-violet-500/10 to-purple-500/5 rounded-full blur-sm md:blur-md"></div>
           <div className="absolute bottom-3 left-5 w-4 h-4 md:bottom-8 md:left-10 md:w-8 md:h-8 bg-gradient-to-br from-amber-500/8 to-yellow-500/5 rounded-full blur-sm md:blur-md"></div>
-          
+
           {/* Responsive header - simple on mobile, handwritten comic style on desktop */}
           <div className="md:text-center mb-1 md:mb-0.5 relative z-10">
             {/* Mobile header */}
@@ -230,7 +230,7 @@ export function WalletScanner() {
                 </h2>
               </div>
             </div>
-            
+
             {/* Desktop header - redesigned with perfect spacing and 2D handwritten style */}
             <div className="hidden md:block">
               <div className="flex items-center justify-between mb-0.5 w-full px-2">
@@ -252,7 +252,7 @@ export function WalletScanner() {
               </div>
             </div>
           </div>
-            
+
           {/* Responsive Search Bar - compact on mobile, large on desktop */}
           <div className="relative mb-1 md:mb-1 z-10 desktop-search-wrapper">
             <div className={`relative clay-input-container desktop-search-container ${isFocused ? 'focused' : ''} ${isHovered ? 'hovered' : ''} ${!query ? 'empty-search-highlight' : ''}`}>
@@ -264,7 +264,7 @@ export function WalletScanner() {
                   <Search className={`h-3.5 w-3.5 md:h-4 md:w-4 transition-colors duration-200 md:duration-300 text-white`} />
                 )}
               </div>
-              
+
               <Input
                 ref={inputRef}
                 type="text"
@@ -295,7 +295,7 @@ export function WalletScanner() {
                   textShadow: '0 0 3px rgba(255, 255, 255, 0.4)'
                 }}
               />
-              
+
               {/* Responsive search button - small on mobile, large on desktop */}
               <Button
                 onClick={handleSearch}
@@ -310,16 +310,16 @@ export function WalletScanner() {
                 <Zap className="h-3 w-3 md:h-3 md:w-3" />
               </Button>
             </div>
-            
+
           </div>
-          
+
           {/* Subtle hint text for new users - only shown when search box is empty and not focused */}
           {!query && !isFocused && (
             <div className="text-center text-xs text-gray-500 dark:text-gray-400 mt-0.5 mb-0.5">
               <span>Enter any wallet address or social handle to check trust score</span>
             </div>
           )}
-          
+
           {/* Mobile-optimized suggestions */}
           <SearchSuggestions
             query={query}
@@ -327,7 +327,7 @@ export function WalletScanner() {
             isVisible={showSuggestions}
             onVisibilityChange={setShowSuggestions}
           />
-            
+
           {/* Modern Platform Support Indicators - redesigned with smooth animations */}
           {!showSuggestions && (
             <div className="flex items-center justify-center gap-2 md:gap-3 lg:gap-4 relative z-[1] mt-1 md:mt-1 lg:mt-1.5">
@@ -340,7 +340,7 @@ export function WalletScanner() {
                   <span className="platform-text">ETH</span>
                 </div>
               </div>
-              
+
               <div className="modern-platform-indicator farcaster-indicator group" title="Farcaster Profiles">
                 <div className="platform-glow farcaster-glow"></div>
                 <div className="platform-content">
@@ -350,7 +350,7 @@ export function WalletScanner() {
                   <span className="platform-text">FAR</span>
                 </div>
               </div>
-              
+
               <div className="modern-platform-indicator twitter-indicator group" title="Twitter/X Handles">
                 <div className="platform-glow twitter-glow"></div>
                 <div className="platform-content">
@@ -360,7 +360,7 @@ export function WalletScanner() {
                   <span className="platform-text">TW</span>
                 </div>
               </div>
-              
+
               <div className="modern-platform-indicator discord-indicator group" title="Discord Users">
                 <div className="platform-glow discord-glow"></div>
                 <div className="platform-content">
@@ -370,7 +370,7 @@ export function WalletScanner() {
                   <span className="platform-text">DIS</span>
                 </div>
               </div>
-              
+
               <div className="modern-platform-indicator telegram-indicator group" title="Telegram Users">
                 <div className="platform-glow telegram-glow"></div>
                 <div className="platform-content">

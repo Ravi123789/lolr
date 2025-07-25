@@ -87,7 +87,7 @@ export default function Home() {
       const randomBug = bugMessages[Math.floor(Math.random() * bugMessages.length)];
       const randomFeature = upcomingFeatures[Math.floor(Math.random() * upcomingFeatures.length)];
       const randomDate = developmentDates[Math.floor(Math.random() * developmentDates.length)];
-      
+
       setTimeout(() => {
         const titleEl = document.getElementById('messy-title');
         const thoughtEl = document.getElementById('messy-thought');
@@ -95,7 +95,7 @@ export default function Home() {
         const featureEl = document.getElementById('feature-note');
         const dateEl = document.getElementById('dev-date');
         const containerEl = document.getElementById('messy-note');
-        
+
         if (titleEl) titleEl.innerHTML = randomNote.title;
         if (thoughtEl) thoughtEl.textContent = randomThought;
         if (bugEl) bugEl.textContent = randomBug;
@@ -141,13 +141,13 @@ export default function Home() {
         headers: { 'Accept': 'application/json' },
         mode: 'cors',
       });
-      
+
       if (!response.ok) {
         throw new Error(`Status API returned ${response.status}: ${response.statusText}`);
       }
-      
+
       const data = await response.json();
-      
+
       // Transform the statuspage.io format to our expected format
       const transformedStatus = {
         status: data.status?.description || 'Unknown',
@@ -158,7 +158,7 @@ export default function Home() {
         lastUpdated: data.page?.updated_at,
         pageName: data.page?.name
       };
-      
+
       setNetworkStatus(transformedStatus);
     } catch (error) {
       setNetworkStatus({ 
@@ -184,7 +184,7 @@ export default function Home() {
             <span className="back-text">Back</span>
             <div className="back-ripple"></div>
           </button>
-          
+
           <div className="modern-live-status">
             <div className="live-pulse-dot"></div>
             <span className="live-text">Live</span>
@@ -195,13 +195,13 @@ export default function Home() {
 
       {/* Ethos Stats Dashboard - Desktop Only, No User Selected */}
       {!user && <EthosStatsData />}
-      
+
       <WalletScanner />
-      
+
       {user ? (
         <>
           <TrustScoreDisplay />
-          
+
           {/* Premium Quick Actions with Comic Tips */}
           <section className="mb-4 animate-slide-up" style={{ animationDelay: '0.5s' }}>
             {/* Comic tooltip strip above buttons */}
@@ -219,7 +219,7 @@ export default function Home() {
                 </svg>
               </div>
             </div>
-            
+
             <div className="flex justify-center gap-3 px-4">
               <Dialog>
                 <DialogTrigger asChild>
@@ -278,7 +278,7 @@ export default function Home() {
               </Dialog>
             </div>
           </section>
-          
+
           <FlexScoreShare />
         </>
       ) : (
@@ -286,7 +286,7 @@ export default function Home() {
           <div className="absolute top-2 right-2 w-10 h-10 bg-gradient-to-br from-orange-500/20 to-primary/20 rounded-full blur-md floating-orb-1"></div>
           <div className="absolute bottom-3 left-3 w-8 h-8 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-sm floating-orb-2"></div>
           <div className="absolute top-1/2 left-1 w-6 h-6 bg-gradient-to-br from-green-500/15 to-cyan-500/15 rounded-full blur-sm floating-orb-3"></div>
-          
+
           <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-foreground relative tracking-tight heading">
             Trust Intelligence Scanner
           </h2>
@@ -359,7 +359,7 @@ export default function Home() {
           </div>
         </div>
       )}
-      
+
       {/* Quick Actions - Mobile optimized */}
       <section className="animate-slide-up mt-4" style={{ animationDelay: '0.7s' }}>
         {!user && (
@@ -464,14 +464,14 @@ export default function Home() {
           </div>
         )}
       </section>
-      
+
       {/* Trust Network Graph - Moved below vouch details and network status */}
       {user && (
         <section className="mb-4">
           <TrustNetworkGraph />
         </section>
       )}
-      
+
       {/* Live Data Section - Moved below trust network */}
       <section className="mb-4">
         <div className="clay-card mobile-card p-3">
@@ -498,7 +498,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Footer with additional status */}
       <footer className="mt-6 pb-4">
         <div className="clay-card mobile-card p-3">
@@ -523,7 +523,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-      
+
       {/* Floating Scan Another Button - Always visible when user is selected */}
       {user && (
         <div className="floating-scan-container">

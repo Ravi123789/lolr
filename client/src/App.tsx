@@ -46,7 +46,7 @@ function ThemeToggle() {
 function AppHeader() {
   return (
     <div className="w-full flex justify-center px-4 mb-3">
-      <header className="clay-card w-full max-w-sm md:w-[40vw] md:min-w-[500px] md:max-w-none">
+      <header className="clay-card w-full max-w-sm md:w-full md:max-w-none">
         <div className="px-3 py-2 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <SimpleRadarLogo className="w-5 h-5" />
