@@ -4,7 +4,11 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
-app.use(cors());  // Add CORS support
+// Configure CORS for Replit environment
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -60,9 +64,8 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Use Replit's PORT environment variable (5000) to satisfy workflow requirements
-  // The vite proxy will be fixed by using relative URLs in frontend
-  const port = parseInt(process.env.PORT || "3000", 10);
+  // Use Replit's PORT environment variable (default 5000) for proper workflow compatibility
+  const port = parseInt(process.env.PORT || "5000", 10);
   
   server.listen(port, "0.0.0.0", () => {
     log(`Server running in ${app.get("env")} mode on port ${port}`);
