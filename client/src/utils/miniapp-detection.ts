@@ -52,17 +52,15 @@ export class MiniAppManager {
   private isFarcasterMiniApp(): boolean {
     if (typeof window === 'undefined') return false;
     
-    // Check for explicit Mini App URL patterns (recommended by Farcaster docs)
     const url = new URL(window.location.href);
     const isMiniAppPath = url.pathname.startsWith('/miniapp') || 
                           url.searchParams.get('miniApp') === 'true';
     
-    // Check for Farcaster Mini App environment
     return (
       isMiniAppPath ||
       window.location.href.includes('farcaster') ||
       window.navigator.userAgent.includes('Farcaster') ||
-      window.parent !== window // iframe detection
+      window.parent !== window
     );
   }
 

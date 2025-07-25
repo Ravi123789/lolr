@@ -23,10 +23,7 @@ function ThemeToggle() {
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
     
-    // Trigger cool ripple animation from button position
     triggerThemeAnimation(x, y);
-    
-    // Change theme
     setTheme(theme === "light" ? "dark" : "light");
   };
 
@@ -81,7 +78,7 @@ function App() {
     // Initialize Mini App SDKs
     const initializeApp = async () => {
       try {
-        const context = await miniAppManager.initialize();
+        await miniAppManager.initialize();
         await initializeFarcasterSDK();
       } catch (error) {
         console.error('App initialization failed:', error);

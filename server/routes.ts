@@ -4,48 +4,43 @@ import path from "path";
 import { z } from "zod";
 import { ethosApi } from "./services/ethos-api";
 
-// Ethos-style tier system matching official app.ethos.network tiers
+// Ethos Protocol official tier system
 function getTierInfo(score: number) {
-  if (score >= 2500) return { tier: 'exemplary IV', emoji: '🌟', flex: 'LEGENDARY STATUS' };
-  if (score >= 2000) return { tier: 'exemplary III', emoji: '⚡', flex: 'ELITE TIER' };
-  if (score >= 1600) return { tier: 'exemplary II', emoji: '🔥', flex: 'TOP PERFORMER' };
-  if (score >= 1200) return { tier: 'exemplary I', emoji: '💎', flex: 'EXEMPLARY' };
-  if (score >= 900) return { tier: 'credible III', emoji: '📈', flex: 'HIGHLY CREDIBLE' };
-  if (score >= 600) return { tier: 'credible II', emoji: '⭐', flex: 'CREDIBLE' };
-  if (score >= 300) return { tier: 'credible I', emoji: '🌱', flex: 'ESTABLISHING' };
-  return { tier: 'neutral', emoji: '🔰', flex: 'BUILDING REPUTATION' };
+  if (score >= 2000) return { tier: 'exemplary', emoji: '💎', flex: 'EXEMPLARY' };
+  if (score >= 1600) return { tier: 'reputable', emoji: '⭐', flex: 'REPUTABLE' };
+  if (score >= 1200) return { tier: 'neutral', emoji: '⚖️', flex: 'NEUTRAL' };
+  if (score >= 800) return { tier: 'questionable', emoji: '⚠️', flex: 'QUESTIONABLE' };
+  return { tier: 'untrusted', emoji: '🛡️', flex: 'UNTRUSTED' };
 }
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Serve Mini App manifests and assets
-  // Serve at both endpoints for compatibility
-  const manifestHandler = (req: any, res: any) => {
+  // Farcaster Mini App manifest handler
+  const manifestHandler = (_req: any, res: any) => {
     res.setHeader('Content-Type', 'application/json');
-    const manifest = {
-      "accountAssociation": {
-        "header": "eyJmaWQiOjE5MDUyMiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDZlMmNiNmQxMDM2QzAzYzY5MzY4MjE5MjkzNEUwRWJEQjcyZDI3NUIifQ",
-        "payload": "eyJkb21haW4iOiJldGhvc3JhZGFyLmNvbSJ9",
-        "signature": "MHg4YzJiMmRjOWEwYTg2NjU2YTRiYjMzMWE1NDhhYzcwNDI2N2U5Y2M0NTgyNjU3ZTM0NzRjZjRhMWUxMjc4MWJjNzhhMzIxZTk1MTIwMjEwNWY1NzVjMTYwMGQ4YWUxOWI4MGQ3OTdhODI3ZWIyMjk3MjFhZmE1MDNjOTAyNzZkNDFi"
+    res.json({
+      accountAssociation: {
+        header: "eyJmaWQiOjE5MDUyMiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDZlMmNiNmQxMDM2QzAzYzY5MzY4MjE5MjkzNEUwRWJEQjcyZDI3NUIifQ",
+        payload: "eyJkb21haW4iOiJldGhvc3JhZGFyLmNvbSJ9",
+        signature: "MHg4YzJiMmRjOWEwYTg2NjU2YTRiYjMzMWE1NDhhYzcwNDI2N2U5Y2M0NTgyNjU3ZTM0NzRjZjRhMWUxMjc4MWJjNzhhMzIxZTk1MTIwMjEwNWY1NzVjMTYwMGQ4YWUxOWI4MGQ3OTdhODI3ZWIyMjk3MjFhZmE1MDNjOTAyNzZkNDFi"
       },
-      "frame": {
-        "version": "1",
-        "name": "EthosRadar",
-        "iconUrl": "https://ethosradar.com/icon.png",
-        "homeUrl": "https://ethosradar.com",
-        "imageUrl": "https://ethosradar.com/hero.png",
-        "buttonTitle": "Scan Trust Network",
-        "splashImageUrl": "https://ethosradar.com/splash.png",
-        "splashBackgroundColor": "#000000",
-        "webhookUrl": "https://ethosradar.com/api/webhook",
-        "subtitle": "Trust Network Scanner",
-        "description": "Scan wallet reputations, analyze trust networks, and track Ethos Protocol scores with real-time analytics.",
-        "primaryCategory": "social",
-        "tags": ["trust", "reputation", "ethos", "network", "scanner"],
-        "requiredChains": ["eip155:1", "eip155:8453"],
-        "requiredCapabilities": ["actions.composeCast", "actions.openUrl", "actions.close"]
+      frame: {
+        version: "1",
+        name: "EthosRadar",
+        iconUrl: "https://ethosradar.com/icon.png",
+        homeUrl: "https://ethosradar.com",
+        imageUrl: "https://ethosradar.com/hero.png",
+        buttonTitle: "Scan Trust Network",
+        splashImageUrl: "https://ethosradar.com/splash.png",
+        splashBackgroundColor: "#000000",
+        webhookUrl: "https://ethosradar.com/api/webhook",
+        subtitle: "Trust Network Scanner",
+        description: "Scan wallet reputations, analyze trust networks, and track Ethos Protocol scores with real-time analytics.",
+        primaryCategory: "social",
+        tags: ["trust", "reputation", "ethos", "network", "scanner"],
+        requiredChains: ["eip155:1", "eip155:8453"],
+        requiredCapabilities: ["actions.composeCast", "actions.openUrl", "actions.close"]
       }
-    };
-    res.json(manifest);
+    });
   };
   
   app.get('/farcaster.json', manifestHandler);
@@ -208,9 +203,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
 
-  // Simple cache for search suggestions
-  const searchCache = new Map();
+  // Search cache with TTL cleanup
+  const searchCache = new Map<string, { data: any; timestamp: number }>();
   const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+  
+  // Cleanup expired cache entries every 10 minutes
+  setInterval(() => {
+    const now = Date.now();
+    for (const [key, value] of Array.from(searchCache.entries())) {
+      if (now - value.timestamp > CACHE_TTL) {
+        searchCache.delete(key);
+      }
+    }
+  }, 10 * 60 * 1000);
 
   // Fast search suggestions using Ethos V1 API
   app.get("/api/search-suggestions", async (req, res) => {
@@ -223,11 +228,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Check cache first
       const cacheKey = query.toLowerCase();
-      if (searchCache.has(cacheKey)) {
-        const cached = searchCache.get(cacheKey);
-        if (Date.now() - cached.timestamp < CACHE_TTL) {
-          return res.json({ success: true, data: cached.data });
-        }
+      const cached = searchCache.get(cacheKey);
+      if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
+        return res.json({ success: true, data: cached.data });
       }
 
       // Use fast V1 search API with more results to improve sorting effectiveness

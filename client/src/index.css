@@ -5,13 +5,11 @@
 /* Base styling */
 html {
   font-family: "Inter", sans-serif;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
 }
 
-body {
-  min-height: 100vh;
-}
-
-#root {
+body, #root {
   min-height: 100vh;
 }
 
@@ -20,12 +18,6 @@ input {
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
-
-/* Prevent zooming on mobile */
-html {
-  touch-action: manipulation;
-  -webkit-text-size-adjust: 100%;
 }
 
 /* Rotating Logo Animation */

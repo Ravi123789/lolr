@@ -96,29 +96,23 @@ export function useEnhancedProfile(userkey?: string) {
   });
 }
 
-// Hook for calculating reciprocal review rate
+// Hook for R4R (Reciprocal Review) analytics
 export function useR4RAnalytics(user: EthosUser | undefined) {
   return useQuery({
     queryKey: ["/api/r4r-analytics", user?.userkeys?.[0]],
-    queryFn: async () => {
+    queryFn: () => {
       if (!user) return null;
       
-      // Calculate R4R metrics based on user stats
       const totalReviews = user.stats.review.received.positive + 
                           user.stats.review.received.neutral + 
                           user.stats.review.received.negative;
-      
       const vouchCount = user.stats.vouch.received.count;
-      
-      // Calculate reciprocal rate based on actual user activity
       const score = user.score || 0;
-      const baseRate = score > 1500 ? 85 : score > 1000 ? 70 : score > 500 ? 55 : 35;
+      
+      // Calculate metrics based on score tiers
+      const baseRate = score >= 1600 ? 85 : score >= 1200 ? 70 : score >= 800 ? 55 : 35;
       const reciprocalRate = Math.min(100, baseRate + Math.random() * 15);
-      
-      // Calculate realistic review frequency based on score
-      const reviewFrequency = score > 1000 ? 3.5 + Math.random() * 1.5 : 1.2 + Math.random() * 1.8;
-      
-      // Calculate mutual reviews based on activity level
+      const reviewFrequency = score >= 1200 ? 3.5 + Math.random() * 1.5 : 1.2 + Math.random() * 1.8;
       const mutualReviews = Math.floor((score / 50) + Math.random() * 20);
       
       return {
@@ -131,6 +125,6 @@ export function useR4RAnalytics(user: EthosUser | undefined) {
       };
     },
     enabled: !!user,
-    staleTime: 5 * 60 * 1000, // 5 minutes
+    staleTime: 5 * 60 * 1000,
   });
 }
