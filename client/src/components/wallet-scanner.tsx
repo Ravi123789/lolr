@@ -254,8 +254,8 @@ export function WalletScanner() {
           </div>
             
           {/* Responsive Search Bar - compact on mobile, large on desktop */}
-          <div className="relative mb-2 md:mb-1.5 z-10">
-            <div className={`relative clay-input-container md:large-clay-input-container ${isFocused ? 'focused' : ''} ${isHovered ? 'hovered' : ''} ${!query ? 'empty-search-highlight' : ''}`} style={{ maxHeight: '38px' }}>
+          <div className="relative mb-2 md:mb-1.5 z-10 desktop-search-wrapper">
+            <div className={`relative clay-input-container desktop-search-container ${isFocused ? 'focused' : ''} ${isHovered ? 'hovered' : ''} ${!query ? 'empty-search-highlight' : ''}`}>
               {/* Search icon - responsive sizing */}
               <div className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
                 {searchMutation.isPending ? (
@@ -280,20 +280,16 @@ export function WalletScanner() {
                 autoCorrect="off"
                 autoCapitalize="off"
                 spellCheck="false"
-                className="w-full h-8 md:h-8 pl-10 md:pl-10 pr-10 md:pr-12 bg-transparent border-none text-white placeholder:text-gray-400 dark:placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm md:text-xs md:font-medium text-center"
+                className="w-full h-8 lg:h-12 xl:h-14 pl-10 lg:pl-16 pr-10 lg:pr-16 bg-transparent border-none text-white placeholder:text-gray-400 dark:placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm lg:text-base xl:text-lg font-medium text-center desktop-search-input"
                 style={{
-                  fontSize: '15px',
                   textDecoration: 'none',
                   textDecorationLine: 'none',
                   outline: 'none',
                   boxShadow: 'none',
                   border: 'none',
                   letterSpacing: '0.03em',
-                  fontWeight: 500,
                   caretColor: '#ff6500',
                   textAlign: 'center',
-                  paddingTop: '8px',
-                  paddingBottom: '8px',
                   lineHeight: '1.2',
                   color: 'white',
                   textShadow: '0 0 3px rgba(255, 255, 255, 0.4)'
