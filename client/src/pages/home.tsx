@@ -7,6 +7,7 @@ import { ScorePulse } from "@/components/score-pulse";
 import { FarcasterCast } from "@/components/farcaster-cast";
 import { UserVouchIntel } from "@/components/user-vouch-intelligence";
 import { EthosStatsData } from "@/components/ethos-stats-dashboard";
+import { UniversalLookupDemo } from "@/components/universal-lookup-demo";
 // V1ScoreBreakdown removed from homepage
 import { Card, CardContent } from "@/components/ui/card";
 import { HandHeart, Activity, Wifi, WifiOff, AlertCircle, Search, ArrowLeft, Zap, Radar, ShieldCheck, Users } from "lucide-react";
@@ -274,6 +275,33 @@ export default function Home() {
                     </DialogTitle>
                   </DialogHeader>
                   <ScorePulse />
+                </DialogContent>
+              </Dialog>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="premium-action-card group cursor-pointer">
+                    <div className="premium-card-content">
+                      <div className="premium-icon-wrapper lookup-theme">
+                        <Search className="h-4 w-4 transition-all group-hover:scale-110 group-hover:rotate-6" />
+                        <div className="premium-icon-glow lookup-glow"></div>
+                      </div>
+                      <div className="premium-text-content">
+                        <div className="text-xs font-bold text-gray-800 dark:text-foreground">Universal Lookup</div>
+                        <div className="text-xs text-gray-600 dark:text-muted-foreground">Cross-platform profile discovery</div>
+                      </div>
+                      <div className="premium-card-shimmer"></div>
+                    </div>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="clay-card border-none w-full max-w-6xl max-h-[90vh] overflow-y-auto m-0">
+                  <DialogHeader>
+                    <DialogTitle className="flex items-center space-x-2 text-gray-800 dark:text-foreground">
+                      <Search className="h-5 w-5" style={{ color: '#ff6500' }} />
+                      <span>Universal Lookup Demo</span>
+                    </DialogTitle>
+                  </DialogHeader>
+                  <UniversalLookupDemo />
                 </DialogContent>
               </Dialog>
             </div>

@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import path from "path";
 import { z } from "zod";
 import { ethosApi } from "./services/ethos-api";
+import { UniversalEthosLookup } from "./services/universal-ethos-lookup";
 
 // Ethos Protocol official tier system
 function getTierInfo(score: number) {
@@ -843,7 +844,46 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // REMOVED DUPLICATE - using the one below
+  // Universal Lookup - Combines V1 Search, V1 Attestations, and V2 Users APIs
+  app.post("/api/universal-lookup", async (req, res) => {
+    try {
+      const { query } = z.object({
+        query: z.string().min(1),
+      }).parse(req.body);
+
+      console.log(`🔍 Universal lookup requested for: ${query}`);
+      
+      const result = await UniversalEthosLookup.lookup(query);
+      
+      if (result.success) {
+        // Add platform summary for easier frontend consumption
+        const platformSummary = UniversalEthosLookup.getPlatformSummary(result);
+        
+        res.json({
+          success: true,
+          data: {
+            ...result,
+            platformSummary: platformSummary,
+            // Additional metadata for frontend
+            totalPlatforms: Object.keys(result.platformIds).filter(key => 
+              result.platformIds[key as keyof typeof result.platformIds]
+            ).length,
+            attestationCount: result.attestations.length
+          }
+        });
+      } else {
+        res.status(404).json({
+          success: false,
+          error: 'User not found or lookup failed'
+        });
+      }
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        error: error instanceof Error ? error.message : 'Internal server error' 
+      });
+    }
+  });
 
   // Get review count between users
   app.get("/api/review-count", async (req, res) => {
