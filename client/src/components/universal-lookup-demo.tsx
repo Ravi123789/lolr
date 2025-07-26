@@ -110,9 +110,22 @@ export function UniversalLookupDemo() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
+          <div className="flex flex-wrap gap-2 mb-3">
+            <span className="text-xs text-muted-foreground">Try these examples:</span>
+            {['cookedzera', 'degenkid4'].map(example => (
+              <button
+                key={example}
+                onClick={() => setQuery(example)}
+                className="text-xs px-2 py-1 bg-muted rounded-md hover:bg-muted/80 transition-colors"
+              >
+                {example}
+              </button>
+            ))}
+          </div>
+          
           <div className="flex gap-2">
             <Input
-              placeholder="Enter username (e.g., cookedzera, vitalik.eth, etc.)"
+              placeholder="Enter any username from Twitter, Discord, Telegram, or Farcaster"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleLookup()}
